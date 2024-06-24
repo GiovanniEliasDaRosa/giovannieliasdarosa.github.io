@@ -1,0 +1,23 @@
+.icons::before {
+  display: inline-block;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  margin-right: 0.5rem;
+  color: var(--text-color);
+}
+
+.icons.nomargin::before {
+  margin-right: 0;
+}
+
+.icons.moon::before {
+  content: "\f186";
+}
+
+.icons.sun::before {
+  content: "\f185";
+}

@@ -1,0 +1,213 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url(font/montserrat-variable.ttf);
+}
+
+:root {
+  color-scheme: dark;
+  --bg-color: hsl(210, 25%, 90%);
+  --focus-color: rgb(0, 0, 0);
+
+  --text-color: hsl(210, 5%, 10%);
+
+  --headers-before-color: hsl(210, 10%, 10%);
+
+  /* card */
+  --cards-border-color: hsl(210, 25%, 85%);
+
+  --card-bg: hsl(210, 25%, 85%);
+  --card-bg-hover: hsl(210, 25%, 80%);
+  --card-bg-focus-visible: hsl(210, 25%, 75%);
+
+  /* button */
+  --button-bg: hsl(210, 25%, 80%);
+  --button-border-color: hsl(210, 25%, 75%);
+
+  --button-bg-hover: hsl(210, 25%, 75%);
+  --button-border-color-hover: hsl(210, 25%, 70%);
+
+  --button-bg-focus-visible: hsl(210, 25%, 70%);
+  --button-border-color-focus-visible: hsl(210, 25%, 65%);
+
+  --link-color: hsl(210, 70%, 30%);
+
+  background-color: var(--bg-color);
+}
+
+[data-dark] {
+  --bg-color: hsl(210, 20%, 10%);
+  --focus-color: white;
+
+  --text-color: hsl(210, 10%, 90%);
+
+  --headers-before-color: hsl(210, 30%, 30%);
+
+  /* card */
+  --cards-border-color: hsl(210, 30%, 12%);
+
+  --card-bg: hsl(210, 20%, 12%);
+  --card-bg-hover: hsl(210, 20%, 15%);
+  --card-bg-focus-visible: hsl(210, 20%, 20%);
+
+  /* button */
+  --button-bg: hsl(210, 20%, 13%);
+  --button-border-color: hsl(210, 30%, 30%);
+
+  --button-bg-hover: hsl(210, 20%, 20%);
+  --button-border-color-hover: hsl(210, 25%, 45%);
+
+  --button-bg-focus-visible: hsl(210, 20%, 8%);
+  --button-border-color-focus-visible: hsl(210, 25%, 55%);
+
+  --link-color: hsl(210, 70%, 65%);
+}
+
+[data-transition] {
+  transition: 0.8s ease-out;
+}
+
+:has([data-transition]) * {
+  transition: 0.3s ease-out;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  color: var(--text-color);
+  text-align: justify;
+}
+
+body {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+main {
+  padding-top: 1em;
+  max-width: 1000px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.3em;
+  position: relative;
+  padding-left: 0.5em;
+}
+
+:is(h1, h2, h3, h4, h5, h6)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0rem;
+  width: 0.2rem;
+  background-color: var(--headers-before-color);
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+h1::before {
+  top: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 0.2rem;
+  left: 0rem;
+}
+
+#mylogo {
+  width: 2em;
+  border-radius: 50%;
+  transition: 0.3s ease-out;
+}
+
+p,
+ul,
+li {
+  margin-bottom: 2em;
+}
+
+li {
+  margin-bottom: 0.5em;
+  list-style-position: inside;
+}
+
+:focus {
+  outline: 0.3em solid var(--focus-color);
+}
+
+/* button */
+button {
+  background-color: var(--button-bg);
+  border: solid 0.1em var(--button-border-color);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  color: white;
+  padding: 0.5em;
+  text-decoration: none;
+
+  border-radius: 0.5em;
+  cursor: pointer;
+  z-index: 1;
+}
+
+button:hover {
+  background-color: var(--button-bg-hover);
+  border-color: var(--button-border-color-hover);
+}
+
+button:focus-visible {
+  background-color: var(--button-bg-focus-visible);
+  border-color: var(--button-border-color-focus-visible);
+}
+
+#ThemeButton {
+  /* position: absolute;
+  top: 0.5em;
+  right: 0.5em; */
+  margin-left: auto;
+  margin-bottom: 1em;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+
+/* link */
+a {
+  color: var(--link-color);
+}
+
+@media (max-width: 600px) {
+  h1 {
+    flex-direction: column;
+  }
+
+  #mylogo {
+    width: 3em;
+    max-width: 100%;
+  }
+}
