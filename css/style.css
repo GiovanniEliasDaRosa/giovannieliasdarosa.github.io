@@ -198,7 +198,9 @@ button:focus-visible {
 
 /* link */
 a {
+  padding-inline: 0.5em;
   color: var(--link-color);
+  border-radius: 0.5em;
 }
 
 @media (max-width: 600px) {
@@ -210,4 +212,53 @@ a {
     width: 3em;
     max-width: 100%;
   }
+}
+
+#githublink {
+  margin-inline: 0.5em;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+  position: relative;
+  isolation: isolate;
+}
+#githublink::before,
+#githublink::after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+}
+
+@property --degrees {
+  syntax: "<number>"; /* <- defined as type number for the transition to work */
+  initial-value: 45;
+  inherits: false;
+}
+
+@keyframes rotateBorder {
+  0% {
+    --degrees: 45;
+  }
+  100% {
+    --degrees: 405;
+  }
+}
+
+#githublink::before {
+  inset: 0;
+  z-index: -2;
+  --deg: calc(var(--degrees) * 1deg);
+  background: linear-gradient(var(--deg), #3acfd5 0%, #3a4ed5 100%);
+}
+
+#githublink:is(:focus-visible, :hover)::before {
+  --deg: calc(var(--degrees) * 1deg);
+  background: linear-gradient(var(--deg), #3acfd5 0%, #3a4ed5 100%);
+  animation: 2s rotateBorder linear infinite;
+}
+
+#githublink::after {
+  inset: 0.25em;
+  z-index: -1;
+  background: var(--bg-color);
+  transition: 0.3s ease-out;
 }
