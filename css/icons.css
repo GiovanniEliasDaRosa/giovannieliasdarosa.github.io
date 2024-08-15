@@ -21,3 +21,17 @@
 .icons.sun::before {
   content: "\f185";
 }
+
+.icons.email::before {
+  content: "\f0e0";
+}
+
+/* Brands */
+
+.icons.brands::before {
+  font-family: "Font Awesome 6 Brands";
+}
+
+.icons.github::before {
+  content: "\f09b";
+}
