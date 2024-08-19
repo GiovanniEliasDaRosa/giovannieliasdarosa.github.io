@@ -7,6 +7,7 @@
   color-scheme: dark;
   --bg-color: hsl(210, 25%, 90%);
   --focus-color: rgb(0, 0, 0);
+  --tag-color: hsl(200, 15%, 85%);
 
   --text-color: hsl(210, 5%, 10%);
 
@@ -37,8 +38,9 @@
 [data-dark] {
   --bg-color: hsl(210, 20%, 10%);
   --focus-color: white;
+  --tag-color: hsl(195, 5%, 15%);
 
-  --text-color: hsl(210, 10%, 90%);
+  --text-color: hsl(200, 15%, 75%);
 
   --headers-before-color: hsl(210, 30%, 30%);
 
@@ -100,7 +102,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin-bottom: 0.3em;
+  margin-bottom: 0.5em;
   position: relative;
   padding-left: 0.5em;
 }
@@ -274,4 +276,31 @@ a {
 
 #githublink:is(:focus, :hover)::after {
   transform: scale(0);
+}
+
+/* tags */
+footer {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/* #tags {
+} */
+
+.tags__title {
+  margin-bottom: 0em;
+}
+
+.tags__group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.tags__item {
+  padding: 0.5em;
+  background-color: var(--tag-color);
+  border-radius: 0.5em;
 }
