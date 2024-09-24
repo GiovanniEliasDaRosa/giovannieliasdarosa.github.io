@@ -46,44 +46,39 @@ function ChangeTheme(user = false) {
   }
 }
 
-// const all = [...document.querySelectorAll("main > *")];
-// let spacetime = 200;
-// let decrement = spacetime / all.length;
-// let ease = spacetime;
+/* animate in elements on scroll */
+const observer = new IntersectionObserver(
+  (entries) => {
+    let timer = 0;
+    let rest = 300;
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !entry.target.classList.contains("show")) {
+        setTimeout(() => {
+          entry.target.classList.add("show");
+          setTimeout(() => {
+            entry.target.classList.remove("hidden");
+            entry.target.classList.remove("show");
+          }, 1000);
+        }, timer * rest + 10);
+        timer++;
+        rest = Math.abs(rest * 0.98);
+      }
+    });
+  },
+  {
+    threshold: 0.4,
+  }
+);
 
-// for (let i = 0; i < all.length; i++) {
-//   const element = all[i];
-//   console.log(ease);
+const hiddenElements = document.querySelectorAll(
+  "main > *, ul > *, #cards > *, footer > *, .tags__group > *"
+);
 
-//   element.classList.add("toanimate");
+hiddenElements.forEach((element) => {
+  element.classList.add("hidden");
+  observer.observe(element);
+});
 
-//   setTimeout(() => {
-//     element.classList.add("animate");
-
-//     setTimeout(() => {
-//       element.classList.remove("toanimate");
-//       element.classList.remove("animate");
-//     }, 550);
-//   }, (spacetime - ease) * i + 200);
-
-//   ease -= decrement;
-// }
-
-// /* animate */
-// .toanimate {
-//   transform: scale(0.2);
-//   transform-origin: 0% 50%;
-//   opacity: 0;
-
-//   transition: 0s ease-out;
-// }
-
-// #cards.toanimate {
-//   transform-origin: 50% 50%;
-// }
-
-// .animate {
-//   transform: scale(1);
-//   opacity: 1;
-//   transition: 0.5s ease-out;
-// }
+setTimeout(() => {
+  window.scrollTo(0, 0);
+}, 200);

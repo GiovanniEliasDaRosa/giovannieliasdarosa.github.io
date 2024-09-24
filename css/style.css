@@ -81,6 +81,10 @@
   text-align: justify;
 }
 
+html {
+  background-color: var(--bg-color);
+}
+
 body {
   padding: 1em;
   display: flex;
@@ -94,6 +98,7 @@ body {
 main {
   padding-top: 1em;
   max-width: 1000px;
+  padding-bottom: 2em;
 }
 
 h1,
@@ -303,4 +308,24 @@ footer {
   padding: 0.5em;
   background-color: var(--tag-color);
   border-radius: 0.5em;
+}
+
+/* animate in elements on scroll */
+.hidden {
+  opacity: 0;
+  transform: translateY(3rem);
+  transition: transform 1.5s cubic-bezier(0.35, 1.15, 0.16, 1.03);
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+    opacity: 1;
+    transform: translateY(0%);
+  }
 }
