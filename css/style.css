@@ -228,6 +228,7 @@ a {
   position: relative;
   isolation: isolate;
   font-weight: 600;
+  display: inline-block;
 }
 
 #githublink::before,
@@ -327,5 +328,12 @@ footer {
     transition: none;
     opacity: 1;
     transform: translateY(0%);
+  }
+}
+
+@media (max-width: 31em) {
+  ul,
+  ul * {
+    text-align: left;
   }
 }

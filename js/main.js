@@ -47,38 +47,38 @@ function ChangeTheme(user = false) {
 }
 
 /* animate in elements on scroll */
-const observer = new IntersectionObserver(
-  (entries) => {
-    let timer = 0;
-    let rest = 300;
-    entries.forEach((entry) => {
-      if (entry.isIntersecting && !entry.target.classList.contains("show")) {
-        setTimeout(() => {
-          entry.target.classList.add("show");
-          setTimeout(() => {
-            entry.target.classList.remove("hidden");
-            entry.target.classList.remove("show");
-          }, 1000);
-        }, timer * rest + 10);
-        timer++;
-        rest = Math.abs(rest * 0.98);
-      }
-    });
-  },
-  {
-    threshold: 0.4,
-  }
-);
+// const observer = new IntersectionObserver(
+//   (entries) => {
+//     let timer = 0;
+//     let rest = 300;
+//     entries.forEach((entry) => {
+//       if (entry.isIntersecting && !entry.target.classList.contains("show")) {
+//         setTimeout(() => {
+//           entry.target.classList.add("show");
+//           setTimeout(() => {
+//             entry.target.classList.remove("hidden");
+//             entry.target.classList.remove("show");
+//           }, 1000);
+//         }, timer * rest + 10);
+//         timer++;
+//         rest = Math.abs(rest * 0.98);
+//       }
+//     });
+//   },
+//   {
+//     threshold: 0.4,
+//   }
+// );
 
-const hiddenElements = document.querySelectorAll(
-  "main > *, ul > *, #cards > *, footer > *, .tags__group > *"
-);
+// const hiddenElements = document.querySelectorAll(
+//   "main > *, ul > *, #cards > *, footer > *, .tags__group > *"
+// );
 
-hiddenElements.forEach((element) => {
-  element.classList.add("hidden");
-  observer.observe(element);
-});
+// hiddenElements.forEach((element) => {
+//   element.classList.add("hidden");
+//   observer.observe(element);
+// });
 
-setTimeout(() => {
-  window.scrollTo(0, 0);
-}, 200);
+// setTimeout(() => {
+//   window.scrollTo(0, 0);
+// }, 200);
