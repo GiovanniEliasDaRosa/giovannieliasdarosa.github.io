@@ -48,6 +48,10 @@
   content: "\f185";
 }
 
+.icons.adjust::before {
+  content: "\f042";
+}
+
 .icons.bars::before {
   content: "\f0c9";
 }

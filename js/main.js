@@ -1,17 +1,25 @@
 // #region Theme
 const root = document.querySelector(":root");
 const changetheme__button = Array.from(document.querySelectorAll(".changetheme__button"));
-let darkTheme = true;
+let theme = "auto";
+let themes = ["auto", "light", "dark"];
+
 let transitionTimeout = "";
 let savedTheme = localStorage.getItem("theme");
 
 if (savedTheme != null) {
-  darkTheme = savedTheme == "dark" ? false : true;
+  let wantedTheme = themes.indexOf(savedTheme);
+  if (wantedTheme - 1 < 0) {
+    wantedTheme = 2;
+  } else {
+    wantedTheme -= 1;
+  }
+
+  theme = themes[wantedTheme];
   ChangeTheme();
 } else {
-  if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
-    ChangeTheme();
-  }
+  theme = "dark";
+  ChangeTheme();
 }
 
 changetheme__button.forEach((button) => {
@@ -21,24 +29,37 @@ changetheme__button.forEach((button) => {
 });
 
 function ChangeTheme(user = false) {
-  if (darkTheme) {
+  if (theme == "auto") {
     changetheme__button.forEach((button) => {
-      button.classList.remove("sun");
-    });
-    darkTheme = false;
-    root.setAttribute("data-theme", "light");
-  } else {
-    changetheme__button.forEach((button) => {
+      button.classList.remove("adjust");
       button.classList.add("sun");
     });
-    darkTheme = true;
+    theme = "light";
+    root.setAttribute("data-theme", "light");
+  } else if (theme == "light") {
+    changetheme__button.forEach((button) => {
+      button.classList.remove("adjust");
+      button.classList.remove("sun");
+    });
+    theme = "dark";
     root.setAttribute("data-theme", "dark");
+  } else {
+    changetheme__button.forEach((button) => {
+      button.classList.remove("sun");
+      button.classList.add("adjust");
+    });
+    let darkTheme = true;
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
+      darkTheme = false;
+    }
+    let selectedTheme = darkTheme ? "dark" : "light";
+    root.setAttribute("data-theme", selectedTheme);
+    theme = "auto";
   }
 
   clearTimeout(transitionTimeout);
   if (user) {
-    let themeSelected = darkTheme ? "dark" : "light";
-    localStorage.setItem("theme", themeSelected);
+    localStorage.setItem("theme", theme);
 
     root.setAttribute("data-transition", "true");
 
@@ -49,7 +70,6 @@ function ChangeTheme(user = false) {
 }
 
 const imgs = Array.from(document.querySelectorAll("img"));
-
 imgs.forEach((img) => {
   if (img.dataset.image != null) {
     img.src = "img/" + img.dataset.image;
