@@ -1,0 +1,129 @@
+/* header */
+header {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  padding: 1rem;
+  height: 4.5rem;
+  background-color: var(--header-bg-color);
+}
+
+header h3 {
+  text-align: center;
+}
+
+#mylogo {
+  height: 3rem;
+  border-radius: 50%;
+  transition: 0.3s ease-out;
+}
+
+#header__options {
+  margin-left: auto;
+  height: 100%;
+}
+
+#header__options_ul {
+  list-style: none;
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  height: 100%;
+  gap: 0.5rem;
+}
+
+#header__options_ul > li > * {
+  min-width: 2.5rem;
+  height: 100%;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#changeThemeButton {
+  margin-left: 2em;
+}
+
+/* MARK: Header popup menu
+*/
+/* #region */
+#header__popupmenu {
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1em;
+  z-index: 20;
+}
+
+#header__popupmenu__closemenu {
+  margin-left: auto;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#header__popupmenu .fullwidth {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  margin-top: 3rem;
+  padding: 1em;
+}
+
+#header__popupmenu__options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  margin-top: 3rem;
+}
+
+.header__popupmenu__options__button {
+  width: 100%;
+  height: auto;
+  padding: 1em;
+}
+/*#endregion*/
+
+@media (max-width: 30em) {
+  #header > h1 {
+    font-size: max(1rem, 6vw);
+    text-align: center;
+  }
+}
+
+#header__popupmenu[data-open="true"] {
+  animation: 500ms headerAppear cubic-bezier(0.4, 0.6, 0.6, 1) forwards;
+}
+
+@keyframes headerAppear {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    background-color: var(--bg-color-outside);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    background-color: var(--bg-color);
+  }
+}
+
+#header__popupmenu[data-close="true"] {
+  animation: 500ms headerDisappear cubic-bezier(0.4, 0.8, 0.5, 0.9) forwards;
+}
+
+@keyframes headerDisappear {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    background-color: var(--bg-color);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    background-color: var(--bg-color-outside);
+  }
+}

@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html" />
-    <link rel="canonical" href="https://giovannieliasdarosa.github.io/" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Giovanni's Portfolio</title>
     <link rel="icon" href="img/favicon_16x16.png" sizes="16x16" />
@@ -16,11 +15,15 @@
       name="description"
       content="I am a passionate web developer with a diverse skill set. From front-end technologies like HTML, CSS, and JS, to back-end tools such as PHP and MySQL, I thrive on creating seamless and engaging web experiences."
     />
+
+    <!-- SEO Tags -->
+    <link rel="canonical" href="https://giovannieliasdarosa.github.io/" />
     <meta
       name="keywords"
-      content="Giovanni's Portfolio, Web Developer Portfolio, Full-Stack Developer, Front-End Developer, Back-End Developer, Game Developer, Unity Developer, itch.io Games, HTML5 Developer, CSS3 Responsive Design, JavaScript Developer, PHP and MySQL Developer, Git Version Control, UX/UI Designer, Database Design with LucidChart, Trello Project Management, Figma Wireframes and Mockups, Learning Laravel, Bootstrap Developer, Kotlin Developer, WordPress Developer, Connect on GitHub, Email Giovanni, Web Development Services, Freelance Web Developer, Passionate Web Developer with Diverse Skill Set, Creating Seamless and Engaging Web Experiences, Published Games on itch.io, Crafting Dynamic and Interactive Web Elements, Visualizing Data Structures with LucidChart, Efficiently Organizing Tasks with Trello, Designing User-Friendly Interfaces with Figma"
+      content="Expert HTML5 Development Techniques, Semantic HTML, Responsive CSS, UX/UI Principles, Advanced JavaScript Development Skills, Clean Code Practices for Maintainable Code, Version Control Mastery with Git, Collaborative Projects on GitHub, PHP Programming for Dynamic Web Applications, SQL Data Management and Database Design, Data Visualization Techniques Using LucidChart, Efficient Project Management with Trello, Prototyping and Wireframing with Figma, Effective Wireframing Techniques for Web Design, Mockup Design Strategies for Web Projects, Comprehensive Web Development Skills, Front-End Development Best Practices, Back-End Development for Robust Applications, Creating User-Friendly Interfaces for Websites, Building Interactive Web Applications for Engagement, Monte Alegre do Sul, Giovanni Elias da Rosa"
     />
 
+    <!-- Open Graph Tags for Social Media -->
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://giovannieliasdarosa.github.io/" />
     <meta property="og:type" content="website" />
@@ -51,168 +54,303 @@
     />
     <meta name="twitter:image:alt" content="Giovanni's Portfolio" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+    <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/icons.css" />
-    <link rel="stylesheet" href="css/cards.css" />
 
     <script src="js/main.js" defer></script>
   </head>
   <body>
+    <header>
+      <img src="img/mylogo.png" alt="My logo" id="mylogo" />
+      <h3>Giovanni's Portfolio</h3>
+      <nav id="header__options">
+        <ul id="header__options_ul">
+          <li class="normal__nav"><a href="#skills" class="button">Skills</a></li>
+          <li class="normal__nav"><a href="#contact" class="button">Contact</a></li>
+          <li class="normal__nav"><a href="#projects" class="button">Projects</a></li>
+          <li class="normal__nav">
+            <button
+              class="changetheme__button icons nomargin square moon sun"
+              title="Change theme"
+            ></button>
+          </li>
+
+          <li>
+            <button
+              class="icons nomargin bars square"
+              title="Open pop up"
+              id="header__options__openmenu"
+            ></button>
+          </li>
+        </ul>
+
+        <nav id="header__popupmenu" style="display: none" aria-disabled="true" disabled="true">
+          <button
+            class="header__options__button icons square nomargin xmark"
+            id="header__popupmenu__closemenu"
+            title="Fechar menu"
+          ></button>
+          <a href="#skills" class="button header__options__button">Skills</a>
+          <a href="#contact" class="button header__options__button">Contact</a>
+          <a href="#projects" class="button header__options__button">Projects</a>
+
+          <button
+            class="changetheme__button normal__nav fullwidth icons moon sun"
+            title="Change theme"
+          >
+            Change theme
+          </button>
+        </nav>
+      </nav>
+    </header>
     <main>
-      <button class="icons nomargin moon" id="ThemeButton" title="Change Theme"></button>
-
-      <h1><img src="img/mylogo.png" alt="My logo" id="mylogo" />Giovanni's Portfolio</h1>
-
-      <h2>About Me</h2>
-
-      <p>
-        I am a passionate web developer with a diverse skill set. From front-end technologies like
-        <strong>HTML, CSS, and JS</strong>, to back-end tools such as <strong>PHP</strong> and
-        <strong>MySQL</strong>, I thrive on creating seamless and engaging web experiences.
-        Additionally, I have explored game development using <strong>C# in Unity</strong> and have
-        published games on <a href="https://gstudio.itch.io/" target="_blank">itch.io</a>
-      </p>
-
-      <h2>Skills</h2>
-
-      <ul>
-        <li>
-          <strong>Front-end Development</strong>: Clean, semantic, and structured
-          <strong>HTML5</strong> with responsive <strong>CSS</strong>.
-        </li>
-        <li><strong>JavaScript</strong>: Crafting dynamic and interactive web elements.</li>
-        <li>
-          <strong>Version Control</strong>: Proficient with <strong>Git</strong> for collaborative
-          development.
-        </li>
-        <li><strong>UX/UI Design</strong>: Creating user-friendly interfaces.</li>
-        <li>
-          <strong>Database Design</strong>: Visualizing data structures using
-          <strong>LucidChart</strong>.
-        </li>
-        <li>
-          <strong>Project Management</strong> Efficiently organizing tasks and workflows using
-          <strong>Trello</strong>.
-        </li>
-        <li>
-          <strong>UI Prototyping</strong> Designing wireframes and mockups with
-          <strong>Figma</strong>.
-        </li>
-      </ul>
-
-      <h2>Learning Journey</h2>
-
-      <p>
-        I am currently expanding my knowledge by learning <strong>Laravel</strong>,
-        <strong>Bootstrap</strong>, <strong>Kotlin</strong> and <strong>WordPress</strong>.
-      </p>
-
-      <h2>Contact</h2>
-
-      <p>
-        Feel free to connect with me on
-        <a href="https://github.com/GiovanniEliasDaRosa" id="githublink"
-          ><span class="icons brands github"></span>GitHub</a
-        >
-        or drop me an email at
-        <a class="icons email" href="mailto:giovanniedarosa@gmail.com">giovanniedarosa@gmail.com</a
-        >.
-      </p>
-
-      <h2>Some of my projects on GitHub</h2>
-      <div id="cards">
-        <a href="https://github.com/GiovanniEliasDaRosa/Image-Puzzle" class="cards">
-          <img
-            src="https://raw.githubusercontent.com/GiovanniEliasDaRosa/Image-Puzzle/main/Cover.png"
-            alt="Cover Image for Image Puzzle on GitHub"
-            class="cards__image"
-          />
-          <span class="cards__title">Image-Puzzle</span>
-          <span class="cards__description"
-            >Solve a 3x3 map by arranging the image tiles in the correct order</span
+      <section id="hero__section">
+        <img
+          src="img/hero-preview.jpg"
+          alt="background image"
+          id="hero__section__image"
+          data-image="hero.jpg"
+        />
+        <h1 id="hero__section__h1">A passionate full-stack web developer</h1>
+        <p>
+          Photo by
+          <a
+            href="https://unsplash.com/@krishna2803?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            >Krishna Pandey</a
           >
-        </a>
-        <a href="https://github.com/GiovanniEliasDaRosa/Minesweeper" class="cards">
-          <img
-            src="https://raw.githubusercontent.com/GiovanniEliasDaRosa/Minesweeper/main/MineSweeper_Card.png"
-            alt="Cover Image for MineSweeper on GitHub"
-            class="cards__image"
-          />
-          <span class="cards__title">MineSweeper</span>
-          <span class="cards__description"
-            >This is a recriation of the classic Minesweeper game</span
+          on
+          <a
+            href="https://unsplash.com/photos/text-KNZHyTpre18?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            >Unsplash</a
           >
-        </a>
-        <a href="https://github.com/GiovanniEliasDaRosa/Em-busca-da-Lily" class="cards">
-          <img
-            src="https://raw.githubusercontent.com/GiovanniEliasDaRosa/Em-busca-da-Lily/main/Card.png"
-            alt="Cover Image for MineSweeper on GitHub"
-            class="cards__image"
-          />
-          <span class="cards__title">Em-busca-da-Lily</span>
-          <span class="cards__description"
-            >Brad had his sister kidnapped by a guy he owed money and you need to find where Lily is
-            being held.</span
+        </p>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+
+        <ul id="skills__ul">
+          <li class="skills__ul__li">
+            <span class="skills__ul__li__icons icons brands html5"></span>
+            <span class="skills__ul__li__desc">
+              Proficient in creating clean, semantic, and structured <strong>HTML5</strong> for
+              optimal web development.
+            </span>
+          </li>
+          <li class="skills__ul__li">
+            <span class="skills__ul__li__icons icons brands css"></span>
+            <span class="skills__ul__li__desc">
+              Skilled in developing responsive and well-structured <strong>CSS</strong> to design
+              user-friendly interfaces, with a focus on <strong>UX/UI</strong> principles.
+            </span>
+          </li>
+          <li class="skills__ul__li">
+            <span class="skills__ul__li__icons icons brands js"></span>
+            <span class="skills__ul__li__desc">
+              Experienced in writing clean and organized <strong>JavaScript</strong> to enhance
+              functionality and interactivity.
+            </span>
+          </li>
+          <li class="skills__ul__li">
+            <span class="skills__ul__li__icons icons brands github"></span>
+            <span class="skills__ul__li__desc">
+              Competent in utilizing <strong>Git</strong> and <strong>GitHub</strong> for version
+              control and collaborative development efforts.
+            </span>
+          </li>
+          <li class="skills__ul__li">
+            <span class="skills__ul__li__icons icons brands php"></span>
+            <span class="skills__ul__li__desc">
+              Knowledgeable in crafting clean, semantic, and structured <strong>PHP</strong> for
+              server-side programming.
+            </span>
+          </li>
+          <li class="skills__ul__li">
+            <span class="skills__ul__li__icons icons sql"></span>
+            <span class="skills__ul__li__desc">
+              Knowledgeable in <strong>SQL</strong> for data management and analysis through project
+              experience.
+            </span>
+          </li>
+          <li class="skills__ul__li">
+            <span class="skills__ul__li__icons icons lucidchart"></span>
+            <span class="skills__ul__li__desc">
+              Proficient in using <strong>LucidChart</strong> for effective data structure
+              visualization.
+            </span>
+          </li>
+          <li class="skills__ul__li">
+            <span class="skills__ul__li__icons icons brands trello"></span>
+            <span class="skills__ul__li__desc">
+              Efficient in organizing tasks and workflows through <strong>Trello</strong>. to
+              enhance project management.
+            </span>
+          </li>
+          <li class="skills__ul__li">
+            <span class="skills__ul__li__icons icons brands figma"></span>
+            <span class="skills__ul__li__desc">
+              Experienced in designing prototypes, wireframes, and mockups using
+              <strong>Figma</strong> to streamline the design process.
+            </span>
+          </li>
+        </ul>
+      </section>
+
+      <section id="contact" class="smallsection">
+        <h2>Contact</h2>
+
+        <ul id="contact__ul">
+          <li>
+            <a href="https://github.com/GiovanniEliasDaRosa" class="button icons brands github"
+              >GitHub</a
+            >
+          </li>
+          <li>
+            <a class="button icons email" href="mailto:giovanniedarosa@gmail.com"
+              >giovanniedarosa@gmail.com</a
+            >
+          </li>
+          <li>
+            <a
+              class="button icons brands linkedin"
+              href="https://www.linkedin.com/in/giovanni-elias/"
+              >Giovanni Elias</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <section id="projects">
+        <h2>Some of my projects on GitHub</h2>
+        <div id="projects__div">
+          <a href="https://github.com/GiovanniEliasDaRosa/Image-Puzzle" class="projects__div__item">
+            <img
+              src="https://raw.githubusercontent.com/GiovanniEliasDaRosa/Image-Puzzle/main/Cover.png"
+              alt="Cover Image for Image Puzzle on GitHub"
+              class="projects__div__item__image"
+              loading="lazy"
+            />
+            <span class="projects__div__item__title">Image Puzzle</span>
+            <span class="projects__div__item__description"
+              >Solve a 3x3 map by arranging the image tiles in the correct order</span
+            >
+          </a>
+          <a href="https://github.com/GiovanniEliasDaRosa/Minesweeper" class="projects__div__item">
+            <img
+              src="https://raw.githubusercontent.com/GiovanniEliasDaRosa/Minesweeper/main/MineSweeper_Card.png"
+              alt="Cover Image for MineSweeper on GitHub"
+              class="projects__div__item__image"
+              loading="lazy"
+            />
+            <span class="projects__div__item__title">MineSweeper</span>
+            <span class="projects__div__item__description"
+              >This is a recriation of the classic Minesweeper game</span
+            >
+          </a>
+          <a
+            href="https://github.com/GiovanniEliasDaRosa/Em-busca-da-Lily"
+            class="projects__div__item"
           >
-        </a>
-        <a href="https://github.com/GiovanniEliasDaRosa/Card-Game" class="cards">
-          <img
-            src="https://raw.githubusercontent.com/GiovanniEliasDaRosa/Card-Game/main/Card.png"
-            alt="Cover Image for Card Game on GitHub"
-            class="cards__image"
-          />
-          <span class="cards__title">Card Game</span>
-          <span class="cards__description"
-            >A classic card game implemented using XAMPP and the Ratchet library.
-          </span>
-        </a>
-        <a href="https://giovannieliasdarosa.github.io/To-Do-List/" class="cards">
-          <img
-            src="https://raw.githubusercontent.com/GiovanniEliasDaRosa/To-Do-List/main/todolist-card.png"
-            alt="Cover Image for Card Game on GitHub"
-            class="cards__image"
-          />
-          <span class="cards__title">To-Do List</span>
-          <span class="cards__description"
-            >A powerful tool that helps you organize your tasks
-          </span>
-        </a>
-        <a href="https://giovannieliasdarosa.github.io/Mystery-Colors/" class="cards">
-          <img
-            src="https://raw.githubusercontent.com/GiovanniEliasDaRosa/Mystery-Colors/main/MysteryColors_Card.png"
-            alt="Cover Image for Card Game on GitHub"
-            class="cards__image"
-          />
-          <span class="cards__title">Mystery Colors</span>
-          <span class="cards__description"
-            >A game that tests your color-guessing skills. You have 10 attempts to guess a secret
-            password made up of 4 unique colors chosen from a palette of 6 vibrant colors.
-          </span>
-        </a>
-        <a
-          href="https://github.com/GiovanniEliasDaRosa?tab=repositories&from=portfolio"
-          class="cards"
-        >
-          <img
-            src="img/seemygithub.png"
-            alt="Cover Image for Card Game on GitHub"
-            class="cards__image"
-          />
-          <span class="cards__title">See more on my GitHub account</span>
-          <span class="cards__description"
-            >The ultimate audio visualization app that brings your music to life with captivating
-            visuals
-          </span>
-        </a>
-      </div>
+            <img
+              src="https://raw.githubusercontent.com/GiovanniEliasDaRosa/Em-busca-da-Lily/main/Card.png"
+              alt="Cover Image for MineSweeper on GitHub"
+              class="projects__div__item__image"
+              loading="lazy"
+            />
+            <span class="projects__div__item__title">Em busca da Lily</span>
+            <span class="projects__div__item__description"
+              >Find where Brad's Sister Lily was kidnapped</span
+            >
+          </a>
+          <a href="https://github.com/GiovanniEliasDaRosa/Card-Game" class="projects__div__item">
+            <img
+              src="https://raw.githubusercontent.com/GiovanniEliasDaRosa/Card-Game/main/Card.png"
+              alt="Cover Image for Card Game on GitHub"
+              class="projects__div__item__image"
+              loading="lazy"
+            />
+            <span class="projects__div__item__title">Card Game</span>
+            <span class="projects__div__item__description"
+              >A classic card game implemented using XAMPP and the Ratchet library.
+            </span>
+          </a>
+          <a href="https://giovannieliasdarosa.github.io/To-Do-List/" class="projects__div__item">
+            <img
+              src="https://raw.githubusercontent.com/GiovanniEliasDaRosa/To-Do-List/main/todolist-card.png"
+              alt="Cover Image for Card Game on GitHub"
+              class="projects__div__item__image"
+              loading="lazy"
+            />
+            <span class="projects__div__item__title">To Do List</span>
+            <span class="projects__div__item__description"
+              >A powerful tool that helps you organize your tasks
+            </span>
+          </a>
+          <a
+            href="https://giovannieliasdarosa.github.io/Mystery-Colors/"
+            class="projects__div__item"
+          >
+            <img
+              src="https://raw.githubusercontent.com/GiovanniEliasDaRosa/Mystery-Colors/main/MysteryColors_Card.png"
+              alt="Cover Image for Card Game on GitHub"
+              class="projects__div__item__image"
+              loading="lazy"
+            />
+            <span class="projects__div__item__title">Mystery Colors</span>
+            <span class="projects__div__item__description"
+              >A game that tests your color-guessing skills
+            </span>
+          </a>
+          <a
+            href="https://github.com/GiovanniEliasDaRosa?tab=repositories&from=portfolio"
+            class="projects__div__item"
+          >
+            <img
+              src="img/seemygithub.png"
+              alt="Cover Image for Card Game on GitHub"
+              class="projects__div__item__image"
+              loading="lazy"
+            />
+            <span class="projects__div__item__title">See more on my GitHub account</span>
+            <span class="projects__div__item__description">See more on my GitHub account</span>
+          </a>
+        </div>
+      </section>
     </main>
+    <footer id="footer">
+      <div class="footer__div" id="footer__connect">
+        <h3>Connect with Me:</h3>
+        <ul>
+          <li>
+            <a href="https://www.linkedin.com/in/giovanni-elias/" class="icons brands linkedin"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/GiovanniEliasDaRosa" class="icons brands github">GitHub</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__div" id="footer__explore">
+        <h3>Explore:</h3>
+        <ul>
+          <li><a href="#skills" class="icons hashtag">Skills</a></li>
+          <li><a href="#contact" class="icons hashtag">Contact</a></li>
+          <li><a href="#projects" class="icons hashtag">Projects</a></li>
+        </ul>
+      </div>
+      <p id="footer__worktogether">
+        <a
+          class="button icons email"
+          href="mailto:giovanniedarosa@gmail.com"
+          id="footer__worktogether__link"
+          >Let’s Work Together!</a
+        >
+      </p>
+      <p id="footer__bottom">© 2024 Giovanni Elias. All Rights Reserved.</p>
+    </footer>
   </body>
 </html>

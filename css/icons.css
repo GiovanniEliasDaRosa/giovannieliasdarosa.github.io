@@ -1,13 +1,39 @@
+@font-face {
+  font-family: "FontAwesome900";
+  src: url("../fonts/icons/fa-solid-900.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FontAwesome400";
+  src: url("../fonts/icons/fa-regular-400.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FontAwesomeBrands400";
+  src: url("../fonts/icons/fa-brands-400.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 .icons::before {
   display: inline-block;
-  font-family: "Font Awesome 6 Free";
+  font-family: "FontAwesome900";
   font-weight: 900;
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   margin-right: 0.5rem;
-  color: var(--text-color);
+  color: inherit;
+}
+
+.icons.light::before {
+  font-family: "FontAwesome400";
+  font-weight: 400;
 }
 
 .icons.nomargin::before {
@@ -22,16 +48,67 @@
   content: "\f185";
 }
 
+.icons.bars::before {
+  content: "\f0c9";
+}
+
+.icons.xmark::before {
+  content: "\f00d";
+}
+
 .icons.email::before {
   content: "\f0e0";
 }
 
-/* Brands */
-
-.icons.brands::before {
-  font-family: "Font Awesome 6 Brands";
+.icons.sql::before {
+  content: "\f1c0";
 }
 
-.icons.github::before {
+.icons.lucidchart::before {
+  content: "\f1c0";
+}
+
+.icons.hashtag::before {
+  content: "\23";
+}
+
+/* Brands */
+.icons.brands::before {
+  font-family: "FontAwesomeBrands400";
+}
+
+.icons.brands.github::before {
   content: "\f09b";
+}
+
+.icons.brands.html5::before {
+  content: "\f13b";
+}
+
+.icons.brands.css::before {
+  content: "\f38b";
+}
+
+.icons.brands.js::before {
+  content: "\f3b8";
+}
+
+.icons.brands.php::before {
+  content: "\f457";
+}
+
+.icons.brands.trello::before {
+  content: "\f181";
+}
+
+.icons.brands.figma::before {
+  content: "\f799";
+}
+
+.icons.brands.itch-io::before {
+  content: "\f83a";
+}
+
+.icons.brands.linkedin::before {
+  content: "\f08c";
 }
