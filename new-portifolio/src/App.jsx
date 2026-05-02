@@ -1,5 +1,11 @@
+import Header from "./assets/Header/Header";
+
 function App() {
-  return <p>New Portifolio!</p>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 }
 
 export default App;

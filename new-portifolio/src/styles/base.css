@@ -1,0 +1,32 @@
+:root {
+  color-scheme: dark light;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: hsl(207, 91%, 4%);
+}
+
+a.no_default_styles {
+  text-decoration: none;
+}
+
+a:not(.no_default_styles) {
+  color: hsl(209, 81%, 77%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+}
