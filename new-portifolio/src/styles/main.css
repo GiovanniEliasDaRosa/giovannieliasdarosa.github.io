@@ -1,0 +1,23 @@
+main,
+footer {
+  display: grid;
+  grid-template-columns: minmax(0.5em, 1fr) minmax(0, 120ch) minmax(0.5em, 1fr);
+}
+
+main > *,
+footer > * {
+  grid-column: 2 / 3;
+  text-align: justify;
+}
+
+main > .full_width {
+  grid-column: 1 / 4;
+  text-align: justify;
+}
+
+section {
+  display: grid;
+  align-content: center;
+  gap: 1em;
+  padding-block: 2em;
+}

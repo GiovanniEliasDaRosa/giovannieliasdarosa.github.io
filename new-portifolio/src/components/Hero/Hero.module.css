@@ -1,0 +1,94 @@
+.hero {
+  position: relative;
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  height: 100svh;
+
+  padding-inline: 1em;
+  background: linear-gradient(
+    0.5turn,
+    hsla(0, 0%, 0%, 0.8) 1em,
+    transparent 50%,
+    hsla(0, 0%, 0%, 0.8) calc(100% - 1em)
+  );
+}
+
+.hero > img {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  object-fit: cover;
+}
+
+.hero > h1 {
+  white-space: normal;
+  text-wrap: balance;
+}
+
+.hero_blinker {
+  display: inline-block;
+  height: 1lh;
+  vertical-align: text-bottom;
+  background-color: hsl(0, 0%, 100%);
+  width: 0.5ch;
+
+  animation: 400ms blink cubic-bezier(0.8, 0.2, 0.2, 0.8) alternate infinite;
+}
+
+@keyframes blink {
+  0% {
+    background-color: hsla(0, 0%, 100%, 0);
+  }
+  100% {
+    background-color: hsl(0, 0%, 100%);
+  }
+}
+
+.hero > #go_down {
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  translate: -50%;
+
+  padding: 0.5em;
+  border: 0.125em solid hsla(0, 0%, 100%, 0.6);
+  border-radius: 2em;
+
+  transition: 0.5s ease-out;
+  transition-property: bottom;
+
+  &:hover {
+    background-color: hsla(0, 0%, 100%, 0.1);
+  }
+
+  &:is(:active, :focus-visible) {
+    background-color: hsla(0, 0%, 100%, 0.2);
+  }
+}
+
+.hero > p {
+  position: absolute;
+  bottom: 0.5em;
+  right: 0.5em;
+  font-size: 0.75em;
+
+  transition: 0.5s ease-out;
+  transition-property: right, translate;
+}
+
+@media (width < 50em) {
+  .hero > #go_down {
+    bottom: 2em;
+  }
+  .hero > p {
+    right: 50%;
+    translate: 50%;
+  }
+}
