@@ -1,3 +1,4 @@
-@layer base;
+@layer icons, base;
 
+@import "./icons.css" layer(icons);
 @import "./base.css" layer(base);
