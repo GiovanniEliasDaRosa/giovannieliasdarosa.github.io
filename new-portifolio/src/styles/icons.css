@@ -52,3 +52,35 @@
 .icons.chevron_down::before {
   content: "\f078";
 }
+
+.icons.html5::before {
+  content: "\f13b";
+}
+
+.icons.css::before {
+  content: "\e6a2";
+}
+
+.icons.square_js::before {
+  content: "\f3b9";
+}
+
+.icons.git::before {
+  content: "\f1d3";
+}
+
+.icons.php::before {
+  content: "\f457";
+}
+
+.icons.database::before {
+  content: "\f1c0";
+}
+
+.icons.trello::before {
+  content: "\f181";
+}
+
+.icons.figma::before {
+  content: "\f799";
+}

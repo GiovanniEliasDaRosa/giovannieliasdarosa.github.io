@@ -1,0 +1,31 @@
+.skills ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+
+@media (width < 60em) {
+  .skills ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skills li {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 1em;
+  border-radius: 1em;
+  border: 0.125em solid hsla(0, 0%, 100%, 0.2);
+}
+
+.skills li::before {
+  font-size: 3rem;
+}
+
+@media (width < 35em) {
+  .skills li::before {
+    font-size: 2rem;
+  }
+}
