@@ -1,0 +1,23 @@
+.projects {
+  background-color: hsl(208, 90%, 8%);
+}
+
+.projects > div {
+  display: flex;
+  gap: 1em;
+  padding: 1em;
+  overflow-x: scroll;
+
+  width: min((40ch + 1em) * 5, 100%);
+  /* mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    black 10em,
+    black calc(100% - 10em),
+    transparent 100%
+  ); */
+  margin-inline: auto;
+
+  scroll-snap-type: x mandatory;
+  justify-content: safe center;
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "tittle": "Image Puzzle",
+    "description": "Solve a 3x3 map by arranging the image tiles in the correct order",
+    "tags": ["HTML", "CSS", "JS"],
+    "image": {
+      "url": "image-puzzle.png",
+      "alt": "Cover Image for Image Puzzle on GitHub"
+    },
+    "link": "https://github.com/GiovanniEliasDaRosa/Image-Puzzle"
+  },
+  {
+    "tittle": "MineSweeper",
+    "description": "This is a recriation of the classic Minesweeper game",
+    "tags": ["HTML", "CSS", "JS"],
+    "image": {
+      "url": "mine-sweeper.png",
+      "alt": "Cover Image for MineSweeper on GitHub"
+    },
+    "link": "https://github.com/GiovanniEliasDaRosa/Minesweeper"
+  },
+  {
+    "tittle": "Em busca da Lily",
+    "description": "Find where Brad's Sister Lily was kidnapped",
+    "tags": ["HTML", "CSS", "JS"],
+    "image": {
+      "url": "em-busca-da-lily.png",
+      "alt": "Cover Image for Em busca da Lily on GitHub"
+    },
+    "link": "https://github.com/GiovanniEliasDaRosa/Em-busca-da-Lily"
+  },
+  {
+    "tittle": "Card Game",
+    "description": "A classic card game implemented using XAMPP and the Ratchet library",
+    "tags": ["WebSocket", "PHP", "HTML", "CSS", "JS"],
+    "image": {
+      "url": "card-game.png",
+      "alt": "Cover Image for Card Game on GitHub"
+    },
+    "link": "https://github.com/GiovanniEliasDaRosa/Card-Game"
+  },
+  {
+    "tittle": "To Do List",
+    "description": "A powerful tool that helps you organize your tasks",
+    "tags": ["HTML", "CSS", "JS"],
+    "image": {
+      "url": "to-do-list.png",
+      "alt": "Cover Image for To Do List on GitHub"
+    },
+    "link": "https://giovannieliasdarosa.github.io/To-Do-List/"
+  },
+  {
+    "tittle": "Mystery Colors",
+    "description": "A game that tests your color-guessing skills",
+    "tags": ["HTML", "CSS", "JS"],
+    "image": {
+      "url": "mystery-colors.png",
+      "alt": "Cover Image for Card Game on GitHub"
+    },
+    "link": "https://giovannieliasdarosa.github.io/Mystery-Colors/"
+  },
+  {
+    "tittle": "See more on my GitHub account",
+    "description": "View more projects",
+    "tags": [],
+    "image": {
+      "url": "seemygithub.png",
+      "alt": "Cover Image for Card Game on GitHub"
+    },
+    "link": "https://github.com/GiovanniEliasDaRosa?tab=repositories&from=portfolio"
+  }
+]

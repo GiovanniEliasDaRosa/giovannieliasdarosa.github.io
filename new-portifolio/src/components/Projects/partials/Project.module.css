@@ -1,0 +1,52 @@
+.project_card {
+  flex: 0 0 40ch;
+  width: 40ch;
+
+  scroll-snap-align: center;
+
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+  border-radius: 0.5em;
+  overflow: hidden;
+  background-color: hsl(208, 88%, 13%);
+
+  &:hover {
+    background-color: hsl(208, 80%, 18%);
+  }
+
+  &:is(:active, :focus-visible) {
+    background-color: hsl(208, 76%, 22%);
+  }
+}
+
+.project_card > span {
+  padding: 0.5em;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-content: start;
+  gap: 0.5em;
+}
+
+.project_card_tittle {
+  font-weight: 700;
+}
+
+.project_card_description {
+  padding-bottom: 0.25em;
+}
+
+.project_card_tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25em;
+}
+
+.project_card_tags > * {
+  padding: 0.3em 0.75em;
+  min-width: 5ch;
+  line-height: 1;
+  background-color: hsl(207, 65%, 26%);
+  border-radius: 1em;
+  text-align: center;
+}
