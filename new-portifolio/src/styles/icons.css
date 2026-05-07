@@ -84,3 +84,11 @@
 .icons.figma::before {
   content: "\f799";
 }
+
+.icons.github::before {
+  content: "\f09b";
+}
+
+.icons.square_linkedin::before {
+  content: "\f08c";
+}

@@ -1,0 +1,34 @@
+.contact > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5em;
+  align-items: center;
+}
+
+@media (width < 35em) {
+  .contact > div {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact a {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  padding: 0.5em;
+  background-color: hsl(207, 87%, 12%);
+  border-radius: 0.5em;
+
+  &:hover {
+    background-color: hsl(207, 82%, 17%);
+  }
+
+  &:is(:active, :focus-visible) {
+    background-color: hsl(207, 77%, 23%);
+  }
+}
+
+.contact a::before {
+  font-size: 2rem;
+}
