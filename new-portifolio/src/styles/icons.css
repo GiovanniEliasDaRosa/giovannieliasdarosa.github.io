@@ -92,3 +92,7 @@
 .icons.square_linkedin::before {
   content: "\f08c";
 }
+
+.icons.react::before {
+  content: "\f41b";
+}
