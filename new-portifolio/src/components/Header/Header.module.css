@@ -27,7 +27,8 @@
   margin-block: 0.5em;
 }
 
-.header > nav > div {
+.header_logo,
+.header_links {
   display: flex;
   align-items: center;
   gap: 0.5em;
@@ -41,23 +42,4 @@
 
 .header_logo > p {
   font-size: 1.25rem;
-}
-
-.header_links > a {
-  color: white;
-  text-decoration: none;
-  padding: 0.5em 1em;
-  background-color: transparent;
-  border: solid 0.125em hsl(209, 69%, 32%);
-  border-radius: 2em;
-
-  &:hover {
-    background-color: hsl(209, 69%, 32%);
-    border-color: transparent;
-  }
-
-  &:is(:active, :focus-visible) {
-    background-color: hsl(209, 85%, 13%);
-    border-color: transparent;
-  }
 }

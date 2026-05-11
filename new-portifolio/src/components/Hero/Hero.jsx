@@ -19,11 +19,17 @@ export default function Hero() {
 
       <p>
         Photo by
-        <a href="https://unsplash.com/@krishna2803?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">
+        <a
+          className="default_styles"
+          href="https://unsplash.com/@krishna2803?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash"
+        >
           Krishna Pandey
         </a>
         on
-        <a href="https://unsplash.com/photos/text-KNZHyTpre18?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">
+        <a
+          className="default_styles"
+          href="https://unsplash.com/photos/text-KNZHyTpre18?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash"
+        >
           Unsplash
         </a>
       </p>

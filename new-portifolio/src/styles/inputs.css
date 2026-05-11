@@ -1,0 +1,39 @@
+a.default_styles {
+  color: hsl(209, 81%, 77%);
+}
+
+a.no_default_styles {
+  text-decoration: none;
+}
+
+button,
+.button {
+  text-decoration: none;
+  color: white;
+
+  padding: 0.5em 1em;
+  background-color: transparent;
+  border: solid 0.125em hsl(209, 69%, 32%);
+  border-radius: 2em;
+  cursor: pointer;
+
+  &:hover {
+    background-color: hsl(209, 69%, 32%);
+    border-color: transparent;
+  }
+
+  &:is(:active, :focus-visible) {
+    background-color: hsl(209, 85%, 13%);
+    border-color: transparent;
+  }
+}
+
+.square {
+  width: 3em;
+  height: 3em;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

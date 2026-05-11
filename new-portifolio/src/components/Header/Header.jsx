@@ -9,13 +9,13 @@ export default function Header() {
           <p>Giovanni's Portfolio</p>
         </div>
         <div className={styles.header_links}>
-          <a className={styles.no_default_styles} href="#skills">
+          <a className="button" href="#skills">
             Skills
           </a>
-          <a className={styles.no_default_styles} href="#projects">
+          <a className="button" href="#projects">
             Projects
           </a>
-          <a className={styles.no_default_styles} href="#contact">
+          <a className="button" href="#contact">
             Contact
           </a>
         </div>

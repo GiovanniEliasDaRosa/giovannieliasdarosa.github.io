@@ -1,5 +1,6 @@
-@layer icons, base, layout;
+@layer icons, base, inputs, layout;
 
 @import "./icons.css" layer(icons);
 @import "./base.css" layer(base);
+@import "./inputs.css" layer(inputs);
 @import "./main.css" layer(layout);

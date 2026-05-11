@@ -14,14 +14,6 @@ body {
   background-color: hsl(207, 91%, 4%);
 }
 
-a.no_default_styles {
-  text-decoration: none;
-}
-
-a:not(.no_default_styles) {
-  color: hsl(209, 81%, 77%);
-}
-
 img {
   max-width: 100%;
 }
