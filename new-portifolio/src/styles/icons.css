@@ -96,3 +96,11 @@
 .icons.react::before {
   content: "\f41b";
 }
+
+.icons.chevron_left::before {
+  content: "\f053";
+}
+
+.icons.chevron_right::before {
+  content: "\f054";
+}
