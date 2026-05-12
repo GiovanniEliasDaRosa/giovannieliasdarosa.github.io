@@ -83,6 +83,8 @@
   transition-property: right, translate;
 
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 1ch;
 }
 
@@ -91,7 +93,7 @@
     bottom: 2em;
   }
   .hero > p {
-    right: 50%;
-    translate: 50%;
+    left: 0;
+    right: 0;
   }
 }

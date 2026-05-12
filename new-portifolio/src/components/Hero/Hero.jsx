@@ -18,14 +18,14 @@ export default function Hero() {
       ></a>
 
       <p>
-        Photo by
+        <span>Photo by</span>
         <a
           className="default_styles"
           href="https://unsplash.com/@krishna2803?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash"
         >
           Krishna Pandey
         </a>
-        on
+        <span>on</span>
         <a
           className="default_styles"
           href="https://unsplash.com/photos/text-KNZHyTpre18?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash"
