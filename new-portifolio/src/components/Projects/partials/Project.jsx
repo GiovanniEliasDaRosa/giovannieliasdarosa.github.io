@@ -1,8 +1,8 @@
 import styles from "./Project.module.css";
 
-export default function Project({ project }) {
+export default function Project({ project, ref }) {
   return (
-    <a href={project.link} className={`${styles.project_card} no_default_styles`}>
+    <a href={project.link} className={`${styles.project_card} no_default_styles`} ref={ref}>
       <img
         src={`${import.meta.env.BASE_URL}assets/images/cover/${project.image.url}`}
         alt={project.image.alt}

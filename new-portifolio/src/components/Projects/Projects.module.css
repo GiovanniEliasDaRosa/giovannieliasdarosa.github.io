@@ -23,6 +23,24 @@
   scrollbar-width: none;
 }
 
+.dots {
+  display: flex;
+  gap: 0.25em;
+  justify-content: center;
+}
+
+.dots > span {
+  width: 0.5em;
+  height: 0.5em;
+  background-color: transparent;
+  border: solid 0.1em hsla(0, 0%, 100%, 0.6);
+  border-radius: 50%;
+}
+
+.dots > span[data-selected="true"] {
+  background-color: hsla(0, 0%, 100%, 1);
+}
+
 .projects_div_scroll[data-scroll="left"] {
   mask-image: linear-gradient(
     90deg,
