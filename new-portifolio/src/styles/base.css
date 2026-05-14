@@ -10,6 +10,11 @@
   font-family: sans-serif;
 }
 
+html {
+  scroll-padding-top: 4em;
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: hsl(207, 91%, 4%);
 }

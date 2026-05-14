@@ -104,3 +104,11 @@
 .icons.chevron_right::before {
   content: "\f054";
 }
+
+.icons.bars::before {
+  content: "\f0c9";
+}
+
+.icons.xmark::before {
+  content: "\f00d";
+}
