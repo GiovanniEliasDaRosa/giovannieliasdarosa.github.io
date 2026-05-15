@@ -12,6 +12,9 @@ export default function Projects() {
   const scrollTimeoutRef = useState(null);
   const skipSeekRef = useRef(false);
 
+  const [mobile, setMobile] = useState(false);
+
+  // Mark: Carousel
   const updateMask = useCallback(() => {
     const container = projectContainerRef.current;
     let current = container.scrollLeft;
@@ -62,24 +65,27 @@ export default function Projects() {
       }
     }
 
-    if (current == 0) {
-      setScrolled("left");
-      setIndex(0);
+    // If not mobile, have mask shown
+    if (!mobile) {
+      if (current == 0) {
+        setScrolled("left");
+        setIndex(0);
 
-      return;
-    } else if (current == scrollMax) {
-      setScrolled("right");
-      setIndex(projectsRefs.current.length - 1);
+        return;
+      } else if (current == scrollMax) {
+        setScrolled("right");
+        setIndex(projectsRefs.current.length - 1);
 
-      return;
+        return;
+      }
+
+      setScrolled("middle");
     }
-
-    setScrolled("middle");
 
     if (!skipSeekRef.current) {
       seekSelected();
     }
-  }, [skipSeekRef]);
+  }, [skipSeekRef, mobile]);
 
   const scrolling = useCallback(() => {
     clearTimeout(scrollTimeoutRef.current);
@@ -114,10 +120,42 @@ export default function Projects() {
 
   useEffect(() => {
     const container = projectContainerRef.current;
+
+    // Mark: Mobile
+    let timeoutUpdateHeader = null;
+
+    function updateCaroseulDisplay() {
+      const fontSize = parseFloat(window.getComputedStyle(document.documentElement).fontSize);
+      const isMobile = window.innerWidth < fontSize * 43;
+
+      setMobile((prevMobile) => {
+        if (prevMobile === isMobile) return prevMobile;
+
+        return isMobile;
+      });
+
+      if (isMobile) {
+        setScrolled("none");
+      } else {
+        skipSeekRef.current = true;
+        updateMask();
+      }
+    }
+
+    function debounceUpdateCaroseulDisplay() {
+      clearTimeout(timeoutUpdateHeader);
+
+      timeoutUpdateHeader = setTimeout(updateCaroseulDisplay, 150);
+    }
+
     container.addEventListener("scroll", scrolling);
+
+    window.addEventListener("resize", debounceUpdateCaroseulDisplay);
+    updateCaroseulDisplay();
 
     return () => {
       container.removeEventListener("scroll", scrolling);
+      window.removeEventListener("resize", debounceUpdateCaroseulDisplay);
     };
   }, [scrolling, updateMask]);
 
@@ -148,20 +186,25 @@ export default function Projects() {
           })}
         </div>
 
-        <button
-          className={`${styles.goleft} icons nomargin chevron_left`}
-          aria-label="Go left"
-          onClick={previous}
-          aria-hidden={scrolled == "left"}
-          style={{ display: scrolled == "left" ? "none" : "" }}
-        ></button>
-        <button
-          className={`${styles.goright} icons nomargin chevron_right`}
-          aria-label="Go right"
-          onClick={next}
-          aria-hidden={scrolled == "right"}
-          style={{ display: scrolled == "right" ? "none" : "" }}
-        ></button>
+        {/* If no mobile, show buttons */}
+        {!mobile ? (
+          <>
+            <button
+              className={`${styles.goleft} icons nomargin chevron_left`}
+              aria-label="Go left"
+              onClick={previous}
+              aria-hidden={scrolled == "left"}
+              style={{ display: scrolled == "left" ? "none" : "" }}
+            ></button>
+            <button
+              className={`${styles.goright} icons nomargin chevron_right`}
+              aria-label="Go right"
+              onClick={next}
+              aria-hidden={scrolled == "right"}
+              style={{ display: scrolled == "right" ? "none" : "" }}
+            ></button>
+          </>
+        ) : null}
       </div>
     </section>
   );

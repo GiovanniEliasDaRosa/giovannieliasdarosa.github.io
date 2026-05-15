@@ -1,6 +1,5 @@
 .project_card {
-  flex: 0 0 40ch;
-  width: 40ch;
+  flex: 0 0 clamp(min(40ch, calc(100% - 1em)), 10ch + 1vw, 100vw);
 
   scroll-snap-align: center;
 
