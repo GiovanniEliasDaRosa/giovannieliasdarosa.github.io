@@ -44,9 +44,18 @@
   font-size: 1.25rem;
 }
 
+.header_dialog {
+  width: unset;
+  height: unset;
+  max-width: unset;
+  max-height: unset;
+  border: none;
+}
+
 .header_mobile {
   position: fixed;
   inset: 0;
+
   overflow-y: auto;
   background-color: hsl(209, 88%, 20%);
   padding: 1em;
@@ -57,11 +66,11 @@
   z-index: 150;
 }
 
-.header_mobile.hide {
+.header_dialog.hide {
   animation: 500ms animate_out cubic-bezier(0.5, 0, 0.4, 0.6) forwards;
 }
 
-.header_mobile.show {
+.header_dialog.show {
   animation: 500ms animate_in cubic-bezier(0.9, 0.1, 0.3, 0.5) forwards;
 }
 

@@ -4,21 +4,27 @@ import styles from "./Header.module.css";
 export default function Header() {
   const [mobile, setMobile] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
-  const menuRef = useRef();
+  const dialogRef = useRef();
 
   function toggleMenu() {
     if (!menuOpen) {
       // If not open, open it
       setMenuOpen(true);
+      dialogRef.current?.showModal();
 
       requestAnimationFrame(() => {
-        menuRef.current?.classList.add(styles.show);
+        dialogRef.current?.classList.add(styles.show);
       });
     } else {
       // If open, close it
-      const element = menuRef.current;
+      const element = dialogRef.current;
 
-      if (!element) return setMenuOpen(false);
+      // If no element anymore
+      if (!element) {
+        dialogRef.current?.close();
+        setMenuOpen(false);
+        return;
+      }
 
       element.classList.remove(styles.show);
       element.classList.add(styles.hide);
@@ -26,6 +32,7 @@ export default function Header() {
       element.addEventListener(
         "animationend",
         () => {
+          dialogRef.current?.close();
           setMenuOpen(false);
         },
         { once: true },
@@ -94,8 +101,8 @@ export default function Header() {
         </nav>
       </header>
 
-      {mobile && menuOpen ? (
-        <div ref={menuRef} className={`${styles.header_links} ${styles.header_mobile}`}>
+      <dialog ref={dialogRef} className={styles.header_dialog}>
+        <div className={`${styles.header_links} ${styles.header_mobile}`}>
           <button
             className={`square icons nomargin xmark ${styles.close_button}`}
             aria-label="Close menu"
@@ -111,7 +118,7 @@ export default function Header() {
             Contact
           </a>
         </div>
-      ) : null}
+      </dialog>
     </>
   );
 }
