@@ -7,11 +7,10 @@
   height: 100vh;
   height: 100svh;
 
-  padding-inline: 1em;
   background: linear-gradient(
     0.5turn,
     hsla(0, 0%, 0%, 0.8) 1em,
-    transparent 50%,
+    hsla(0, 0%, 0%, 0.3) 50%,
     hsla(0, 0%, 0%, 0.8) calc(100% - 1em)
   );
 }
@@ -27,9 +26,25 @@
   object-fit: cover;
 }
 
-.hero > h1 {
+.hero_middle {
+  display: grid;
+  gap: 1em;
+
+  position: relative;
+  backdrop-filter: blur(0.25em);
+  padding: 1em;
+  border-radius: 1em;
+
+  background-color: hsla(0, 0%, 0%, 0.6);
+}
+
+.hero_middle > h1 {
   white-space: normal;
   text-wrap: balance;
+}
+
+.hero_middle > p {
+  max-width: 60ch;
 }
 
 .hero_blinker {
@@ -38,6 +53,7 @@
   vertical-align: text-bottom;
   background-color: hsl(0, 0%, 100%);
   width: 0.5ch;
+  margin-left: 0.5ch;
 
   animation: 400ms blink cubic-bezier(0.8, 0.2, 0.2, 0.8) alternate infinite;
 }

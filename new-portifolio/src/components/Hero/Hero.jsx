@@ -5,10 +5,16 @@ export default function Hero() {
     <section className={`${styles.hero} full_width`}>
       <img src={`${import.meta.env.BASE_URL}assets/images/background.jpg`} alt="Coding" />
 
-      <h1>
-        <span>A passionate web developer</span>
-        <span className={styles.hero_blinker}></span>
-      </h1>
+      <div className={styles.hero_middle}>
+        <h1>
+          <span>
+            A passionate web developer
+            <span className={styles.hero_blinker}></span>
+          </span>
+        </h1>
+
+        <p>I create responsive & accessible websites with clean code & UX that feels natural</p>
+      </div>
 
       <a
         href="#skills"
