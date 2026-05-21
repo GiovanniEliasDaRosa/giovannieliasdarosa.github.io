@@ -32,17 +32,27 @@ export default function Skills() {
         </li>
         <li className="icons nomargin database">
           <span>
-            <strong>MySQL</strong>: data management and LucidChart to create diagrams
+            <strong>MySQL</strong>: Data management and LucidChart to create diagrams
           </span>
         </li>
         <li className="icons nomargin brands trello">
           <span>
-            <strong>Trello</strong>: organize tasks and enhance project management
+            <strong>Trello</strong>: Organize tasks and enhance project management
           </span>
         </li>
         <li className="icons nomargin brands figma">
           <span>
-            <strong>Figma</strong>: design prototypes, wireframes and mockups
+            <strong>Figma</strong>: Design prototypes, wireframes and mockups
+          </span>
+        </li>
+        <li className="icons nomargin brands react">
+          <span>
+            <strong>React</strong>: Reusable components with state management and hooks
+          </span>
+        </li>
+        <li className="icons nomargin brands notion">
+          <span>
+            <strong>Notion</strong>: Sketchbook to write project ideas and roadmaps
           </span>
         </li>
       </ul>

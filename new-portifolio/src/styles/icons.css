@@ -97,6 +97,10 @@
   content: "\f41b";
 }
 
+.icons.notion::before {
+  content: "\e7d9";
+}
+
 .icons.chevron_left::before {
   content: "\f053";
 }
