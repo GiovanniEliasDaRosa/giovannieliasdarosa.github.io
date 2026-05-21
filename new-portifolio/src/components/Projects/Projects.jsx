@@ -65,26 +65,40 @@ export default function Projects() {
       }
     }
 
-    // If not mobile, have mask shown
-    if (!mobile) {
+    if (mobile) {
+      setScrolled("none");
+
       if (current == 0) {
-        setScrolled("left");
         setIndex(0);
-
-        return;
       } else if (current == scrollMax) {
-        setScrolled("right");
         setIndex(projectsRefs.current.length - 1);
-
-        return;
       }
 
-      setScrolled("middle");
+      seekSelected();
+      return;
     }
 
-    if (!skipSeekRef.current) {
-      seekSelected();
+    if (current == 0) {
+      setScrolled("left");
+
+      if (skipSeekRef.current) return;
+
+      setIndex(0);
+      return;
+    } else if (current == scrollMax) {
+      setScrolled("right");
+
+      if (skipSeekRef.current) return;
+
+      setIndex(projectsRefs.current.length - 1);
+      return;
+    } else {
+      setScrolled("middle");
+
+      if (skipSeekRef.current) return;
     }
+
+    seekSelected();
   }, [skipSeekRef, mobile]);
 
   const scrolling = useCallback(() => {
@@ -118,29 +132,26 @@ export default function Projects() {
     skipSeekRef.current = true;
   }
 
-  useEffect(() => {
-    const container = projectContainerRef.current;
+  const updateCaroseulDisplay = useCallback(() => {
+    const fontSize = parseFloat(window.getComputedStyle(document.documentElement).fontSize);
+    const isMobile = window.innerWidth < fontSize * 43;
 
+    setMobile((prevMobile) => {
+      if (prevMobile === isMobile) return prevMobile;
+
+      return isMobile;
+    });
+
+    if (isMobile) {
+      setScrolled("none");
+    } else {
+      updateMask();
+    }
+  }, [updateMask]);
+
+  useEffect(() => {
     // Mark: Mobile
     let timeoutUpdateHeader = null;
-
-    function updateCaroseulDisplay() {
-      const fontSize = parseFloat(window.getComputedStyle(document.documentElement).fontSize);
-      const isMobile = window.innerWidth < fontSize * 43;
-
-      setMobile((prevMobile) => {
-        if (prevMobile === isMobile) return prevMobile;
-
-        return isMobile;
-      });
-
-      if (isMobile) {
-        setScrolled("none");
-      } else {
-        skipSeekRef.current = true;
-        updateMask();
-      }
-    }
 
     function debounceUpdateCaroseulDisplay() {
       clearTimeout(timeoutUpdateHeader);
@@ -148,16 +159,24 @@ export default function Projects() {
       timeoutUpdateHeader = setTimeout(updateCaroseulDisplay, 150);
     }
 
-    container.addEventListener("scroll", scrolling);
+    updateCaroseulDisplay();
 
     window.addEventListener("resize", debounceUpdateCaroseulDisplay);
-    updateCaroseulDisplay();
+
+    return () => {
+      window.removeEventListener("resize", debounceUpdateCaroseulDisplay);
+    };
+  }, [updateCaroseulDisplay]);
+
+  useEffect(() => {
+    const container = projectContainerRef.current;
+
+    container.addEventListener("scroll", scrolling);
 
     return () => {
       container.removeEventListener("scroll", scrolling);
-      window.removeEventListener("resize", debounceUpdateCaroseulDisplay);
     };
-  }, [scrolling, updateMask]);
+  }, [scrolling]);
 
   return (
     <section className={`${styles.projects} full_width`} id="projects">
