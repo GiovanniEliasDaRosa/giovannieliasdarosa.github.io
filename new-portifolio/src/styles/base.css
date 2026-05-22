@@ -7,7 +7,7 @@
   margin: 0;
   padding: 0;
   color: white;
-  font-family: "Montserrat";
+  font-family: "Montserrat", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
 html {
@@ -30,5 +30,5 @@ h4,
 h5,
 h6 {
   text-align: center;
-  font-family: "Aleo";
+  font-family: "Aleo", "Merriweather", Georgia, serif;
 }
