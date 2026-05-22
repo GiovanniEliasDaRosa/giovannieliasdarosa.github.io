@@ -1,20 +1,20 @@
 @font-face {
   font-family: "FontAwesome900";
-  src: url("./assets/icons/fa-solid-900.woff2") format("woff2");
+  src: url("/assets/icons/fa-solid-900.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: "FontAwesome400";
-  src: url("./assets/icons/fa-regular-400.woff2") format("woff2");
+  src: url("/assets/icons/fa-regular-400.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "FontAwesomeBrands400";
-  src: url("./assets/icons/fa-brands-400.woff2") format("woff2");
+  src: url("/assets/icons/fa-brands-400.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
