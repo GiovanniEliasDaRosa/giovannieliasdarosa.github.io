@@ -32,6 +32,10 @@
   height: 100%;
   display: block;
 
+  background-image: url("/assets/images/background-small.jpg");
+  background-size: cover;
+  background-position: center;
+
   object-fit: cover;
 }
 

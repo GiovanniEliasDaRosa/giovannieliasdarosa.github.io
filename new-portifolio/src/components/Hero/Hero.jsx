@@ -3,7 +3,7 @@ import styles from "./Hero.module.css";
 export default function Hero() {
   return (
     <section className={`${styles.hero} full_width`}>
-      <img src={`/assets/images/background.jpg`} alt="Coding" />
+      <img src={`/assets/images/background.jpg`} alt="Coding" loading="lazy" />
 
       <div className={styles.hero_middle}>
         <h1>

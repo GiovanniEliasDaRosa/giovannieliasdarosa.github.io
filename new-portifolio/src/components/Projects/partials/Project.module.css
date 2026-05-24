@@ -19,6 +19,13 @@
   }
 }
 
+.project_card > img {
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  background-color: hsl(208, 74%, 28%);
+  font-style: italic;
+}
+
 .project_card > span {
   padding: 0.5em;
   display: grid;
