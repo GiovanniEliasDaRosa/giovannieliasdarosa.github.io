@@ -110,7 +110,7 @@ export default function Header() {
           {mobile ? (
             // Show menu button on nav
             <button
-              className="square icons nomargin bars"
+              className={`square icons nomargin bars ${styles.open_menu}`}
               aria-label="Open menu"
               onClick={() => {
                 toggleMenu(false);
