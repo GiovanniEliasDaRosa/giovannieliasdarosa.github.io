@@ -6,38 +6,66 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const dialogRef = useRef();
 
-  function toggleMenu() {
-    if (!menuOpen) {
+  function toggleMenu(overrideClose) {
+    const dialog = dialogRef.current;
+
+    // If no dialog anymore
+    if (!dialog) {
+      dialogRef.current?.close();
+      setMenuOpen(false);
+      document.body.style.overflow = "";
+      return;
+    }
+
+    if (!menuOpen && !overrideClose) {
       // If not open, open it
       setMenuOpen(true);
-      dialogRef.current?.showModal();
+      dialog.showModal();
+
+      dialog.classList.remove(styles.show);
+      dialog.classList.remove(styles.hide);
+      dialog.classList.remove(styles.hide_clicked);
 
       requestAnimationFrame(() => {
-        dialogRef.current?.classList.add(styles.show);
+        dialog.classList.add(styles.show);
+
+        dialog.addEventListener(
+          "animationend",
+          () => {
+            document.body.style.overflow = "hidden";
+          },
+          { once: true },
+        );
       });
     } else {
       // If open, close it
-      const element = dialogRef.current;
 
-      // If no element anymore
-      if (!element) {
-        dialogRef.current?.close();
-        setMenuOpen(false);
-        return;
+      dialog.classList.remove(styles.show);
+      dialog.classList.remove(styles.hide);
+      dialog.classList.remove(styles.hide_clicked);
+
+      // Overriding animation to close
+      if (overrideClose) {
+        dialog.classList.add(styles.hide_clicked);
+      } else {
+        dialog.classList.add(styles.hide);
       }
 
-      element.classList.remove(styles.show);
-      element.classList.add(styles.hide);
-
-      element.addEventListener(
+      dialog.addEventListener(
         "animationend",
         () => {
           dialogRef.current?.close();
           setMenuOpen(false);
+          document.body.style.overflow = "";
         },
         { once: true },
       );
     }
+  }
+
+  function clickedMenuLink() {
+    // Close menu
+    toggleMenu(true);
   }
 
   useState(() => {
@@ -65,6 +93,8 @@ export default function Header() {
 
     return () => {
       window.removeEventListener("resize", debounceHeader);
+
+      document.body.style.overflow = "";
     };
   }, []);
 
@@ -82,7 +112,9 @@ export default function Header() {
             <button
               className="square icons nomargin bars"
               aria-label="Open menu"
-              onClick={toggleMenu}
+              onClick={() => {
+                toggleMenu(false);
+              }}
             ></button>
           ) : (
             // Show buttons
@@ -106,15 +138,17 @@ export default function Header() {
           <button
             className={`square icons nomargin xmark ${styles.close_button}`}
             aria-label="Close menu"
-            onClick={toggleMenu}
+            onClick={() => {
+              toggleMenu(false);
+            }}
           ></button>
-          <a className="button" href="#skills">
+          <a className="button" href="#skills" onClick={clickedMenuLink}>
             Skills
           </a>
-          <a className="button" href="#projects">
+          <a className="button" href="#projects" onClick={clickedMenuLink}>
             Projects
           </a>
-          <a className="button" href="#contact">
+          <a className="button" href="#contact" onClick={clickedMenuLink}>
             Contact
           </a>
         </div>
