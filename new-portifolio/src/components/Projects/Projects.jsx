@@ -8,6 +8,9 @@ export default function Projects() {
   const projectsRefs = useRef([]);
   const [index, setIndex] = useState(0);
 
+  const stepsFitInPageRef = useRef(0);
+  const [steps, setSteps] = useState([]);
+
   const [scrolled, setScrolled] = useState("left");
   const scrollTimeoutRef = useState(null);
   const skipSeekRef = useRef(false);
@@ -111,7 +114,7 @@ export default function Projects() {
   }, [scrollTimeoutRef, updateMask]);
 
   function previous() {
-    const previous = Math.max(index - 1, 0);
+    const previous = Math.max(index - stepsFitInPageRef.current - 1, 0);
     setIndex(previous);
 
     projectsRefs.current[previous]?.scrollIntoView({
@@ -122,7 +125,7 @@ export default function Projects() {
   }
 
   function next() {
-    const next = Math.min(index + 1, projects.length - 1);
+    const next = Math.min(index + stepsFitInPageRef.current + 1, projects.length - 1);
     setIndex(next);
 
     projectsRefs.current[next]?.scrollIntoView({
@@ -147,6 +150,18 @@ export default function Projects() {
     } else {
       updateMask();
     }
+
+    // Update steps indicators
+    const firstCardWidth = projectsRefs.current[0].clientWidth;
+    const fitsPerPage = Math.floor(projectContainerRef.current.clientWidth / firstCardWidth) - 1;
+    const stepsNecessary = Math.ceil(projectsRefs.current.length / fitsPerPage);
+    stepsFitInPageRef.current = fitsPerPage;
+
+    let stepsResult = [];
+    for (let i = 0; i < stepsNecessary; i++) {
+      stepsResult.push(i * fitsPerPage);
+    }
+    setSteps(stepsResult);
   }, [updateMask]);
 
   useEffect(() => {
@@ -200,8 +215,18 @@ export default function Projects() {
         </div>
 
         <div className={styles.dots}>
-          {projects.map((project, i) => {
-            return <span key={i} data-selected={i == index ? "true" : null}></span>;
+          {steps.map((_, i) => {
+            return (
+              <span
+                key={i}
+                data-selected={
+                  i >= Math.floor(index / stepsFitInPageRef.current) &&
+                  i < Math.floor(index / stepsFitInPageRef.current) + 1
+                    ? "true"
+                    : null
+                }
+              ></span>
+            );
           })}
         </div>
 

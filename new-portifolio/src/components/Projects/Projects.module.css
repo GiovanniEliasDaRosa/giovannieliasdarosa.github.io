@@ -30,11 +30,11 @@
 }
 
 .dots > span {
-  width: 0.5em;
+  width: 1em;
   height: 0.5em;
   background-color: transparent;
   border: solid 0.1em hsla(0, 0%, 100%, 0.6);
-  border-radius: 50%;
+  border-radius: 1em;
 }
 
 .dots > span[data-selected="true"] {
