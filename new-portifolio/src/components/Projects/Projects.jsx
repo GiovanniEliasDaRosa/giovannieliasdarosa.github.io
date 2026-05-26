@@ -9,8 +9,8 @@ export default function Projects() {
   const [index, setIndex] = useState(0);
 
   const [scrolled, setScrolled] = useState("left");
-  const scrollTimeoutRef = useState(null);
-  const skipSeekRef = useRef(false);
+  const scrollTimeoutRef = useRef(null);
+  const skipSeekRef = useRef(null);
 
   const [mobile, setMobile] = useState(false);
 
@@ -104,10 +104,17 @@ export default function Projects() {
   const scrolling = useCallback(() => {
     clearTimeout(scrollTimeoutRef.current);
 
-    scrollTimeoutRef.current = setTimeout(() => {
-      updateMask();
-      skipSeekRef.current = false;
-    }, 150);
+    // If want to update mask only
+    if (skipSeekRef.current) {
+      scrollTimeoutRef.current = setTimeout(() => {
+        updateMask();
+        skipSeekRef.current = false;
+      }, 150);
+
+      return;
+    }
+
+    updateMask();
   }, [scrollTimeoutRef, updateMask]);
 
   function previous() {
