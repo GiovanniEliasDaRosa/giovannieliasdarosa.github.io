@@ -1,0 +1,34 @@
+name: Deploy Vite React (new-portifolio) to gh-pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        working-directory: ./new-portifolio
+        run: npm ci
+
+      - name: Build
+        working-directory: ./new-portifolio
+        run: npm run build
+
+      - name: Deploy with gh-pages
+        working-directory: ./new-portifolio
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx gh-pages -d dist
