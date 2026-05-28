@@ -26,9 +26,9 @@ jobs:
         working-directory: ./new-portifolio
         run: npm run build
 
-      - name: Deploy with gh-pages
-        working-directory: ./new-portifolio
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          npx gh-pages -d dist
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./new-portifolio/dist
+          publish_branch: gh-pages
