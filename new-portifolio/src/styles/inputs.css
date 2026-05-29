@@ -11,6 +11,7 @@ button,
   text-decoration: none;
   color: white;
 
+  font-size: 1rem;
   padding: 0.5em 1em;
   background-color: transparent;
   border: solid 0.125em hsl(209, 69%, 32%);
@@ -29,8 +30,8 @@ button,
 }
 
 .square {
-  width: 3em;
-  height: 3em;
+  width: 2.5em;
+  height: 2.5em;
   padding: 0;
 
   display: flex;

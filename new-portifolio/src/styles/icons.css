@@ -116,3 +116,15 @@
 .icons.xmark::before {
   content: "\f00d";
 }
+
+.icons.sun::before {
+  content: "\f185";
+}
+
+.icons.moon::before {
+  content: "\f186";
+}
+
+.icons.circle_half_stroke::before {
+  content: "\f042";
+}

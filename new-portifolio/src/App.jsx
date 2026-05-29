@@ -1,3 +1,4 @@
+import { ThemeProvider } from "./contexts/ThemeContext";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import Skills from "./components/Skills/Skills";
@@ -8,16 +9,18 @@ import Footer from "./components/Footer/Footer";
 function App() {
   return (
     <>
-      <Header />
+      <ThemeProvider>
+        <Header />
 
-      <main>
-        <Hero />
-        <Skills />
-        <Projects />
-        <Contact />
-      </main>
+        <main>
+          <Hero />
+          <Skills />
+          <Projects />
+          <Contact />
+        </main>
 
-      <Footer />
+        <Footer />
+      </ThemeProvider>
     </>
   );
 }

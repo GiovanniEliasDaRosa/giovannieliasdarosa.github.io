@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import styles from "./Header.module.css";
+import ThemeButton from "./partials/ThemeButton";
 
 export default function Header() {
   const [mobile, setMobile] = useState(true);
@@ -128,6 +129,7 @@ export default function Header() {
               <a className="button" href="#contact">
                 Contact
               </a>
+              <ThemeButton display="square" />
             </div>
           )}
         </nav>
@@ -151,6 +153,7 @@ export default function Header() {
           <a className="button" href="#contact" onClick={clickedMenuLink}>
             Contact
           </a>
+          <ThemeButton display="large" />
         </div>
       </dialog>
     </>

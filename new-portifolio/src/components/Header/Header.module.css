@@ -31,7 +31,7 @@
 }
 
 .header .open_menu {
-  flex: 0 0 3em;
+  flex: 0 0 2.5em;
 }
 
 .header_logo,
@@ -80,6 +80,11 @@
   align-content: start;
   gap: 1em;
   z-index: 150;
+}
+
+.header_mobile > .toggle_theme_button {
+  display: flex;
+  align-items: center;
 }
 
 .header_dialog.hide {
