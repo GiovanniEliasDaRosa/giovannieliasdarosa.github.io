@@ -76,6 +76,13 @@ export default function Header() {
       const fontSize = parseFloat(window.getComputedStyle(document.documentElement).fontSize);
       const isMobile = window.innerWidth < fontSize * 43;
 
+      // If mobile menu was open and now it's PC mode, cgitlose the menu
+      if (!isMobile) {
+        dialogRef.current?.close();
+        setMenuOpen(false);
+        document.body.style.overflow = "";
+      }
+
       setMobile((prevMobile) => {
         if (prevMobile === isMobile) return prevMobile;
 
