@@ -14,17 +14,17 @@ button,
   font-size: 1rem;
   padding: 0.5em 1em;
   background-color: transparent;
-  border: solid 0.125em hsl(209, 69%, 32%);
+  border: solid 0.125em var(--color-outlined-button);
   border-radius: 2em;
   cursor: pointer;
 
   &:hover {
-    background-color: hsl(209, 69%, 32%);
+    background-color: var(--color-outlined-button-hover);
     border-color: transparent;
   }
 
   &:is(:active, :focus-visible) {
-    background-color: hsl(209, 85%, 13%);
+    background-color: var(--color-outlined-button-focus);
     border-color: transparent;
   }
 }

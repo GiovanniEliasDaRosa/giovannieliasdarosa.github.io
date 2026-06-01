@@ -1,5 +1,5 @@
 .footer {
-  background-color: hsl(207, 82%, 15%);
+  background-color: var(--color-footer-bg);
   padding-block: 1em;
   margin-top: 4em;
 }

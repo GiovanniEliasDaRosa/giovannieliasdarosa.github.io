@@ -8,21 +8,21 @@
 
   border-radius: 0.5em;
   overflow: hidden;
-  background-color: hsl(208, 88%, 13%);
+  background-color: var(--color-section-projects-project-bg);
 
   &:hover {
-    background-color: hsl(208, 80%, 18%);
+    background-color: var(--color-section-projects-project-bg-hover);
   }
 
   &:is(:active, :focus-visible) {
-    background-color: hsl(208, 76%, 22%);
+    background-color: var(--color-section-projects-project-bg-focus);
   }
 }
 
 .project_card > img {
   aspect-ratio: 2 / 1;
   object-fit: cover;
-  background-color: hsl(208, 74%, 28%);
+  background-color: var(--color-section-projects-project-img-bg);
   font-style: italic;
 }
 
@@ -52,7 +52,7 @@
   padding: 0.3em 0.75em;
   min-width: 5ch;
   line-height: 1;
-  background-color: hsl(207, 65%, 26%);
+  background-color: var(--color-section-projects-project-tag-bg);
   border-radius: 1em;
   text-align: center;
 }

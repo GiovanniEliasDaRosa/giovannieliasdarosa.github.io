@@ -1,0 +1,81 @@
+/* MARK: Dark theme
+*/
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg-html: hsl(209, 88%, 20%);
+  --color-bg-body: hsl(207, 91%, 4%);
+  --color-text: hsl(0, 0%, 90%);
+  --color-outline-focus: hsl(0, 0%, 100%);
+
+  --color-header-gradient: hsl(0, 0%, 0%);
+
+  --color-header-mobile-bg: var(--color-bg-html);
+  --color-header-mobile-bg-animating: hsl(209, 80%, 30%);
+
+  --color-outlined-button: hsl(209, 69%, 32%);
+  --color-outlined-button-hover: hsl(209, 69%, 32%);
+  --color-outlined-button-focus: hsl(209, 85%, 13%);
+
+  --color-bg-filled-button: hsl(207, 87%, 12%);
+  --color-bg-filled-button-hover: hsl(207, 82%, 17%);
+  --color-bg-filled-button-focus: hsl(207, 77%, 23%);
+
+  --color-bg-section-projects: hsl(208, 90%, 8%);
+  --color-outline-section-projects-dots: hsla(0, 0%, 100%, 0.6);
+  --color-filled-section-projects-dots: hsla(0, 0%, 100%, 1);
+
+  --color-section-skills-outline: hsla(209, 30%, 70%, 0.2);
+
+  --color-section-projects-button-bg: hsl(209, 69%, 32%);
+  --color-section-projects-button-bg-hover: hsl(209, 69%, 32%);
+  --color-section-projects-button-bg-focus: hsl(209, 85%, 13%);
+
+  --color-section-projects-project-bg: hsl(208, 88%, 13%);
+  --color-section-projects-project-bg-hover: hsl(208, 80%, 18%);
+  --color-section-projects-project-bg-focus: hsl(208, 76%, 22%);
+  --color-section-projects-project-img-bg: hsl(208, 74%, 28%);
+  --color-section-projects-project-tag-bg: hsl(207, 65%, 26%);
+
+  --color-footer-bg: hsl(207, 82%, 15%);
+}
+
+/* MARK: Light theme
+*/
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-bg-html: hsl(209, 28%, 53%);
+  --color-bg-body: hsl(203, 29%, 95%);
+  --color-text: hsl(0, 0%, 10%);
+  --color-outline-focus: hsl(0, 0%, 0%);
+
+  --color-header-gradient: hsl(203, 1%, 100%);
+
+  --color-header-mobile-bg: var(--color-bg-html);
+  --color-header-mobile-bg-animating: hsl(208, 43%, 88%);
+
+  --color-outlined-button: hsl(209, 48%, 56%);
+  --color-outlined-button-hover: hsl(209, 53%, 37%);
+  --color-outlined-button-focus: hsl(209, 63%, 30%);
+
+  --color-bg-filled-button: hsl(206, 55%, 85%);
+  --color-bg-filled-button-hover: hsl(206, 49%, 69%);
+  --color-bg-filled-button-focus: hsl(207, 38%, 50%);
+
+  --color-bg-section-projects: hsl(204, 53%, 93%);
+  --color-outline-section-projects-dots: hsla(0, 0%, 10%, 0.6);
+  --color-filled-section-projects-dots: hsla(0, 0%, 10%, 1);
+
+  --color-section-skills-outline: hsla(208, 70%, 30%, 0.2);
+
+  --color-section-projects-button-bg: hsl(209, 64%, 74%);
+  --color-section-projects-button-bg-hover: hsl(209, 63%, 62%);
+  --color-section-projects-button-bg-focus: hsl(209, 57%, 52%);
+
+  --color-section-projects-project-bg: hsl(210, 50%, 87%);
+  --color-section-projects-project-bg-hover: hsl(209, 48%, 74%);
+  --color-section-projects-project-bg-focus: hsl(209, 31%, 58%);
+  --color-section-projects-project-img-bg: hsl(210, 55%, 68%);
+  --color-section-projects-project-tag-bg: hsl(210, 54%, 79%);
+
+  --color-footer-bg: hsl(205, 71%, 93%);
+}

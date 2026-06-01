@@ -10,6 +10,10 @@
   isolation: isolate;
 }
 
+.hero *:not(a) {
+  color: hsl(0, 0%, 100%);
+}
+
 .hero::before {
   content: "";
   position: absolute;
@@ -87,6 +91,7 @@
   translate: -50%;
 
   padding: 0.5em;
+  color: hsl(0, 0%, 100%);
   border: 0.125em solid hsla(0, 0%, 100%, 0.6);
   border-radius: 2em;
 

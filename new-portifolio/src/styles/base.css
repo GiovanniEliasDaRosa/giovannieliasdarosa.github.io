@@ -1,24 +1,24 @@
-:root {
-  color-scheme: dark light;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: white;
+  color: var(--color-text);
   font-family: "Montserrat", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+:focus {
+  outline: 0.25em solid var(--color-outline-focus);
 }
 
 html {
   scroll-padding-top: 4em;
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
-  background-color: hsl(209, 88%, 20%);
+  background-color: var(--color-bg-html);
 }
 
 body {
-  background-color: hsl(207, 91%, 4%);
+  background-color: var(--color-bg-body);
 }
 
 img {

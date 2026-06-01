@@ -1,5 +1,5 @@
 .projects {
-  background-color: hsl(208, 90%, 8%);
+  background-color: var(--color-bg-section-projects);
 }
 
 .projects_div {
@@ -33,12 +33,12 @@
   width: 0.5em;
   height: 0.5em;
   background-color: transparent;
-  border: solid 0.1em hsla(0, 0%, 100%, 0.6);
+  border: solid 0.1em var(--color-outline-section-projects-dots);
   border-radius: 50%;
 }
 
 .dots > span[data-selected="true"] {
-  background-color: hsla(0, 0%, 100%, 1);
+  background-color: var(--color-filled-section-projects-dots);
 }
 
 .projects_div_scroll[data-scroll="left"] {
@@ -71,7 +71,7 @@
 }
 
 .projects button {
-  color: white;
+  color: var(--color-text);
   font-size: 1rem;
   padding: 0em;
   width: 3em;
@@ -84,16 +84,16 @@
   cursor: pointer;
 
   background-color: transparent;
-  border: solid 0.125em hsl(209, 69%, 32%);
-  background-color: hsl(209, 69%, 32%);
+  border: none;
+  background-color: var(--color-section-projects-button-bg);
 
   &:hover {
-    background-color: hsl(209, 69%, 32%);
+    background-color: var(--color-section-projects-button-bg-hover);
     border-color: transparent;
   }
 
   &:is(:active, :focus-visible) {
-    background-color: hsl(209, 85%, 13%);
+    background-color: var(--color-section-projects-button-bg-focus);
     border-color: transparent;
   }
 }

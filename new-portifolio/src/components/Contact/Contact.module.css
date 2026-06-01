@@ -17,15 +17,15 @@
 
   width: 100%;
   padding: 0.5em;
-  background-color: hsl(207, 87%, 12%);
+  background-color: var(--color-bg-filled-button);
   border-radius: 0.5em;
 
   &:hover {
-    background-color: hsl(207, 82%, 17%);
+    background-color: var(--color-bg-filled-button-hover);
   }
 
   &:is(:active, :focus-visible) {
-    background-color: hsl(207, 77%, 23%);
+    background-color: var(--color-bg-filled-button-focus);
   }
 }
 
