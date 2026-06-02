@@ -28,6 +28,8 @@ jobs:
 
       - name: Build
         working-directory: ./new-portifolio
+        env:
+          VITE_BASE_PATH: /new-portifolio/
         run: npm run build
 
       - name: Disable Jekyll
