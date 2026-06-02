@@ -1,12 +1,16 @@
-name: Deploy Vite React (new-portifolio) to gh-pages
+name: Deploy Vite React to gh-pages
 
 on:
   push:
     branches: [main]
 
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,6 +29,9 @@ jobs:
       - name: Build
         working-directory: ./new-portifolio
         run: npm run build
+
+      - name: Disable Jekyll
+        run: touch ./new-portifolio/dist/.nojekyll
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
