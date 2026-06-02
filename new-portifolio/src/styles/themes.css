@@ -1,11 +1,11 @@
 @property --transition-top {
-  syntax: "<length>";
+  syntax: "<length> | <percentage>";
   initial-value: 50%;
   inherits: true;
 }
 
 @property --transition-left {
-  syntax: "<length>";
+  syntax: "<length> | <percentage>";
   initial-value: 50%;
   inherits: true;
 }
