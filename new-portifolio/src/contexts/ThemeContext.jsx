@@ -1,4 +1,4 @@
-import { createContext, useCallback, useEffect, useState } from "react";
+import { createContext, useCallback, useEffect, useRef, useState } from "react";
 
 const ThemeContext = createContext();
 
@@ -15,8 +15,9 @@ function ThemeProvider({ children }) {
   }
 
   const [theme, setTheme] = useState(tryGetSavedTheme);
+  const loadedRef = useRef(false);
 
-  const updateThemeVisual = useCallback(() => {
+  function updateThemeVisualTransition() {
     let selectedTheme = theme;
 
     // IF selected theme is auto, get the light/dark prefered
@@ -25,27 +26,41 @@ function ThemeProvider({ children }) {
     }
 
     document.documentElement.setAttribute("data-theme", selectedTheme);
-  }, [theme]);
+  }
 
-  useEffect(() => {
-    function updateAutomaticTheme() {
-      // Only when theme is auto
-      if (theme == "auto") {
-        // Update for light or dark mode
-        updateThemeVisual();
-      }
+  const updateThemeVisual = useCallback(() => {
+    // If don't support transition, and don't animate first transition, as is page changing colors
+    if (!document.startViewTransition || !loadedRef.current) {
+      updateThemeVisualTransition();
+      return;
     }
 
-    localStorage.setItem("theme", theme);
+    document.startViewTransition(() => {
+      updateThemeVisualTransition();
+    });
+  }, [theme]);
 
-    updateThemeVisual();
+  function updateAutomaticTheme() {
+    // Only when theme is auto
+    if (theme == "auto") {
+      // Update for light or dark mode
+      updateThemeVisual();
+    }
+  }
 
+  useEffect(() => {
     const prefersDarkModeMedia = window.matchMedia("(prefers-color-scheme: dark)");
     prefersDarkModeMedia.addEventListener("change", updateAutomaticTheme);
 
     return () => {
       prefersDarkModeMedia.removeEventListener("change", updateAutomaticTheme);
     };
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    updateThemeVisual();
+    loadedRef.current = true;
   }, [theme, updateThemeVisual]);
 
   return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>;

@@ -1,3 +1,15 @@
+@property --transition-top {
+  syntax: "<length>";
+  initial-value: 50%;
+  inherits: true;
+}
+
+@property --transition-left {
+  syntax: "<length>";
+  initial-value: 50%;
+  inherits: true;
+}
+
 /* MARK: Dark theme
 */
 :root[data-theme="dark"] {
@@ -78,4 +90,21 @@
   --color-section-projects-project-tag-bg: hsl(210, 54%, 79%);
 
   --color-footer-bg: hsl(205, 71%, 93%);
+}
+
+::view-transition-new(old) {
+  animation-delay: 500ms;
+}
+
+::view-transition-new(root) {
+  animation: 500ms new ease-in;
+}
+
+@keyframes new {
+  0% {
+    clip-path: circle(0vmax at var(--transition-left) var(--transition-top));
+  }
+  100% {
+    clip-path: circle(150vmax at var(--transition-left) var(--transition-top));
+  }
 }

@@ -6,7 +6,7 @@ export default function ThemeButton({ display }) {
   const { theme, setTheme } = useContext(ThemeContext);
   const [helperText, setHelperText] = useState(`Toggle theme | Current theme: ${theme}`);
 
-  function toggletheme() {
+  function toggletheme(e) {
     if (theme == "auto") {
       setTheme("dark");
     } else if (theme == "dark") {
@@ -14,6 +14,9 @@ export default function ThemeButton({ display }) {
     } else {
       setTheme("auto");
     }
+
+    document.documentElement.style.setProperty("--transition-top", `${e.clientY}px`);
+    document.documentElement.style.setProperty("--transition-left", `${e.clientX}px`);
   }
 
   let iconToUse = "circle_half_stroke";
