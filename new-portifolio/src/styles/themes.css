@@ -19,7 +19,7 @@
   --color-text: hsl(0, 0%, 90%);
   --color-outline-focus: hsl(0, 0%, 100%);
 
-  --color-header-gradient: hsl(0, 0%, 0%);
+  --color-header-gradient: hsl(207, 91%, 4%);
 
   --color-header-mobile-bg: var(--color-bg-html);
   --color-header-mobile-bg-animating: hsl(209, 80%, 30%);
@@ -60,7 +60,7 @@
   --color-text: hsl(0, 0%, 10%);
   --color-outline-focus: hsl(0, 0%, 0%);
 
-  --color-header-gradient: hsl(203, 1%, 100%);
+  --color-header-gradient: hsl(203, 29%, 95%);
 
   --color-header-mobile-bg: var(--color-bg-html);
   --color-header-mobile-bg-animating: hsl(208, 43%, 88%);

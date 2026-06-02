@@ -6,6 +6,7 @@ export default function Header() {
   const [mobile, setMobile] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const dialogRef = useRef();
+  const [scrolled, setScrolled] = useState(false);
 
   function toggleMenu(overrideClose) {
     const dialog = dialogRef.current;
@@ -96,11 +97,23 @@ export default function Header() {
       timeoutUpdateHeader = setTimeout(updateHeader, 150);
     }
 
+    function handleScroll() {
+      // If passed the hero section
+      if (window.scrollY > window.innerHeight) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    }
+
     window.addEventListener("resize", debounceHeader);
+    window.addEventListener("scroll", handleScroll);
+
     updateHeader();
 
     return () => {
       window.removeEventListener("resize", debounceHeader);
+      window.removeEventListener("scroll", handleScroll);
 
       document.body.style.overflow = "";
     };
@@ -108,7 +121,7 @@ export default function Header() {
 
   return (
     <>
-      <header className={styles.header}>
+      <header className={styles.header} data-scrolled={scrolled}>
         <nav>
           <div className={styles.header_logo}>
             <img src={`/assets/images/logo.png`} alt="" />
