@@ -16,8 +16,10 @@ function ThemeProvider({ children }) {
 
   const [theme, setTheme] = useState(tryGetSavedTheme);
   const loadedRef = useRef(false);
+  const timeoutThemeTransitionRef = useRef(null);
 
   function updateThemeVisualTransition() {
+    clearTimeout(timeoutThemeTransitionRef.current);
     let selectedTheme = theme;
 
     // IF selected theme is auto, get the light/dark prefered
@@ -26,9 +28,14 @@ function ThemeProvider({ children }) {
     }
 
     document.documentElement.setAttribute("data-theme", selectedTheme);
+
+    timeoutThemeTransitionRef.current = setTimeout(() => {
+      document.documentElement.setAttribute("data-chaging-theme", false);
+    }, 750);
   }
 
   const updateThemeVisual = useCallback(() => {
+    document.documentElement.setAttribute("data-chaging-theme", true);
     // If don't support transition, and don't animate first transition, as is page changing colors
     if (!document.startViewTransition || !loadedRef.current) {
       updateThemeVisualTransition();

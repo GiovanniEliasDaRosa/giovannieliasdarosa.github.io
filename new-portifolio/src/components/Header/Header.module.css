@@ -12,11 +12,13 @@
 
   background: linear-gradient(0deg, transparent, var(--header-color));
 
-  transition: --header-color 1s ease-in-out;
-
   display: grid;
   grid-template-columns: minmax(0.5em, 1fr) minmax(0, 120ch) minmax(0.5em, 1fr);
   z-index: 100;
+}
+
+:root[data-chaging-theme="false"] .header {
+  transition: --header-color 1s ease-in-out;
 }
 
 /* If theme is light and scrolled */
