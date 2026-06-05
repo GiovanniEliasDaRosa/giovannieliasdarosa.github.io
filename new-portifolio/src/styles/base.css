@@ -6,7 +6,7 @@
   font-family: "Montserrat", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
-:focus {
+:focus-visible {
   outline: 0.25em solid var(--color-outline-focus);
 }
 
