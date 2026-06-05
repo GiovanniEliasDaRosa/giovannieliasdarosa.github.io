@@ -82,6 +82,8 @@
   max-width: unset;
   max-height: unset;
   border: none;
+
+  background-color: var(--color-header-mobile-bg);
 }
 
 .header_mobile {
@@ -89,7 +91,6 @@
   inset: 0;
 
   overflow-y: auto;
-  background-color: var(--color-header-mobile-bg);
   padding: 1em;
 
   display: grid;
