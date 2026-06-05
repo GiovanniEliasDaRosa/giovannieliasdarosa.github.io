@@ -71,7 +71,7 @@
 }
 
 .projects button {
-  color: var(--color-text);
+  color: var(--color-text-inverse);
   font-size: 1rem;
   padding: 0em;
   width: 3em;

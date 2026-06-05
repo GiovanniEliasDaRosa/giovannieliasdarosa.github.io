@@ -17,9 +17,13 @@
   --color-bg-html: hsl(209, 88%, 20%);
   --color-bg-body: hsl(207, 91%, 4%);
   --color-text: hsl(0, 0%, 90%);
+  --color-text-inverse: hsl(0, 0%, 10%);
   --color-outline-focus: hsl(0, 0%, 100%);
 
   --color-header-gradient: hsl(207, 91%, 4%);
+  --color-header-bg: hsla(209, 88%, 20%, 0.5);
+  --color-header-box-shadow-light: hsla(209, 53%, 51%, 0.25);
+  --color-header-box-shadow-shadow: hsla(209, 83%, 29%, 0.25);
 
   --color-header-mobile-bg: var(--color-bg-html);
   --color-header-mobile-bg-animating: hsl(209, 80%, 30%);
@@ -58,16 +62,24 @@
   --color-bg-html: hsl(209, 28%, 53%);
   --color-bg-body: hsl(203, 29%, 95%);
   --color-text: hsl(0, 0%, 10%);
+  --color-text-inverse: hsl(0, 0%, 90%);
   --color-outline-focus: hsl(0, 0%, 0%);
 
   --color-header-gradient: hsl(203, 29%, 95%);
+  --color-header-bg: hsla(209, 89%, 17%, 0.5);
+  --color-header-box-shadow-light: hsla(209, 53%, 51%, 0.25);
+  --color-header-box-shadow-shadow: hsla(209, 83%, 29%, 0.25);
+
+  --color-header-bg: hsla(209, 92%, 21%, 0.6);
+  --color-header-box-shadow-light: hsla(209, 97%, 21%, 0.25);
+  --color-header-box-shadow-shadow: hsla(209, 86%, 8%, 0.25);
 
   --color-header-mobile-bg: var(--color-bg-html);
   --color-header-mobile-bg-animating: hsl(208, 43%, 88%);
 
-  --color-outlined-button: hsl(209, 48%, 56%);
-  --color-outlined-button-hover: hsl(209, 53%, 37%);
-  --color-outlined-button-focus: hsl(209, 63%, 30%);
+  --color-outlined-button: hsl(209, 55%, 70%);
+  --color-outlined-button-hover: hsl(209, 42%, 62%);
+  --color-outlined-button-focus: hsl(209, 47%, 45%);
 
   --color-bg-filled-button: hsl(206, 55%, 85%);
   --color-bg-filled-button-hover: hsl(206, 49%, 69%);
@@ -79,15 +91,15 @@
 
   --color-section-skills-outline: hsla(208, 70%, 30%, 0.2);
 
-  --color-section-projects-button-bg: hsl(209, 64%, 74%);
-  --color-section-projects-button-bg-hover: hsl(209, 63%, 62%);
-  --color-section-projects-button-bg-focus: hsl(209, 57%, 52%);
+  --color-section-projects-button-bg: hsl(209, 64%, 34%);
+  --color-section-projects-button-bg-hover: hsl(209, 51%, 44%);
+  --color-section-projects-button-bg-focus: hsl(209, 81%, 20%);
 
   --color-section-projects-project-bg: hsl(210, 50%, 87%);
-  --color-section-projects-project-bg-hover: hsl(209, 48%, 74%);
-  --color-section-projects-project-bg-focus: hsl(209, 31%, 58%);
-  --color-section-projects-project-img-bg: hsl(210, 55%, 68%);
-  --color-section-projects-project-tag-bg: hsl(210, 54%, 79%);
+  --color-section-projects-project-bg-hover: hsl(209, 51%, 76%);
+  --color-section-projects-project-bg-focus: hsl(209, 45%, 66%);
+  --color-section-projects-project-img-bg: hsl(208, 37%, 51%);
+  --color-section-projects-project-tag-bg: hsl(208, 58%, 69%);
 
   --color-footer-bg: hsl(205, 71%, 93%);
 }
