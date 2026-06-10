@@ -1,72 +1,212 @@
 [
   {
-    "tittle": "Image Puzzle",
-    "description": "Solve a 3x3 map by arranging the image tiles in the correct order",
+    "tittle": "Trap The Cat",
+    "description": "You have to trap the cat and don't let him escape.",
     "tags": ["HTML", "CSS", "JS"],
+    "type": "Game",
     "image": {
-      "url": "image-puzzle.png",
-      "alt": "Cover Image for Image Puzzle on GitHub"
+      "src": "trap-the-cat.png",
+      "alt": "Cover Image for Trap The Cat on GitHub"
     },
-    "link": "https://github.com/GiovanniEliasDaRosa/Image-Puzzle"
+    "repository": {
+      "link": "https://github.com/GiovanniEliasDaRosa/Image-Puzzle",
+      "firstCommitDate": "2023-07-05",
+      "lastCommitDate": "2023-08-24",
+      "commits": 16
+    },
+    "deployment": "https://giovannieliasdarosa.github.io/Trap-The-Cat",
+    "meta": {
+      "role": "Solo",
+      "year": 2023
+    }
   },
   {
     "tittle": "MineSweeper",
     "description": "This is a recriation of the classic Minesweeper game",
     "tags": ["HTML", "CSS", "JS"],
+    "type": "Game",
     "image": {
-      "url": "mine-sweeper.png",
+      "src": "mine-sweeper.png",
       "alt": "Cover Image for MineSweeper on GitHub"
     },
-    "link": "https://github.com/GiovanniEliasDaRosa/Minesweeper"
+    "repository": {
+      "link": "https://github.com/GiovanniEliasDaRosa/Minesweeper",
+      "firstCommitDate": "2024-03-01",
+      "lastCommitDate": "2024-03-05",
+      "commits": 14
+    },
+    "deployment": "https://giovannieliasdarosa.github.io/Minesweeper",
+    "meta": {
+      "role": "Solo",
+      "year": 2024
+    }
   },
   {
     "tittle": "Em busca da Lily",
     "description": "Find where Brad's Sister Lily was kidnapped",
     "tags": ["HTML", "CSS", "JS"],
+    "type": "Game",
     "image": {
-      "url": "em-busca-da-lily.png",
+      "src": "em-busca-da-lily.png",
       "alt": "Cover Image for Em busca da Lily on GitHub"
     },
-    "link": "https://github.com/GiovanniEliasDaRosa/Em-busca-da-Lily"
+    "repository": {
+      "link": "https://github.com/GiovanniEliasDaRosa/Em-busca-da-Lily",
+      "firstCommitDate": "2024-01-24",
+      "lastCommitDate": "2024-04-16",
+      "commits": 12
+    },
+    "deployment": "https://giovannieliasdarosa.github.io/Em-busca-da-Lily",
+    "meta": {
+      "role": "Solo",
+      "year": 2024
+    }
+  },
+  {
+    "tittle": "Image Puzzle",
+    "description": "Solve a 3x3 map by arranging the image tiles in the correct order",
+    "tags": ["HTML", "CSS", "JS"],
+    "type": "Game",
+    "image": {
+      "src": "image-puzzle.png",
+      "alt": "Cover Image for Image Puzzle on GitHub"
+    },
+    "repository": {
+      "link": "https://github.com/GiovanniEliasDaRosa/Image-Puzzle",
+      "firstCommitDate": "2024-03-18",
+      "lastCommitDate": "2024-03-19",
+      "commits": 6
+    },
+    "deployment": "https://giovannieliasdarosa.github.io/Image-Puzzle",
+    "meta": {
+      "role": "Solo",
+      "year": 2026
+    }
+  },
+  {
+    "tittle": "Turbo Tracks",
+    "description": "Take control of a speedy car as it navigates three lanes filled with obstacles. Dodge it and test your reflexes in this adrenaline-fueled race to your highest score!",
+    "tags": ["HTML", "CSS", "JS"],
+    "type": "Game",
+    "image": {
+      "src": "",
+      "alt": ""
+    },
+    "repository": {
+      "link": "https://github.com/GiovanniEliasDaRosa/Turbo-Tracks",
+      "firstCommitDate": "2024-07-15",
+      "lastCommitDate": "2024-08-13",
+      "commits": 4
+    },
+    "deployment": "https://giovannieliasdarosa.github.io/Turbo-Tracks",
+    "meta": {
+      "role": "Solo",
+      "year": 0
+    }
   },
   {
     "tittle": "Card Game",
     "description": "A classic card game implemented using XAMPP and the Ratchet library",
     "tags": ["WebSocket", "PHP", "HTML", "CSS", "JS"],
+    "type": "Game",
     "image": {
-      "url": "card-game.png",
+      "src": "card-game.png",
       "alt": "Cover Image for Card Game on GitHub"
     },
-    "link": "https://github.com/GiovanniEliasDaRosa/Card-Game"
+    "repository": {
+      "link": "https://github.com/GiovanniEliasDaRosa/Card-Game",
+      "firstCommitDate": "2024-07-22",
+      "lastCommitDate": "2024-09-02",
+      "commits": 27
+    },
+    "deployment": null,
+    "meta": {
+      "role": "Solo",
+      "year": 2024
+    }
   },
   {
     "tittle": "To Do List",
     "description": "A powerful tool that helps you organize your tasks",
     "tags": ["HTML", "CSS", "JS"],
+    "type": "Real Project",
     "image": {
-      "url": "to-do-list.png",
+      "src": "to-do-list.png",
       "alt": "Cover Image for To Do List on GitHub"
     },
-    "link": "https://giovannieliasdarosa.github.io/To-Do-List/"
-  },
-  {
-    "tittle": "Mystery Colors",
-    "description": "A game that tests your color-guessing skills",
-    "tags": ["HTML", "CSS", "JS"],
-    "image": {
-      "url": "mystery-colors.png",
-      "alt": "Cover Image for Card Game on GitHub"
+    "repository": {
+      "link": "https://giovannieliasdarosa.github.io/To-Do-List",
+      "firstCommitDate": "2024-04-12",
+      "lastCommitDate": "2024-12-04",
+      "commits": 26
     },
-    "link": "https://giovannieliasdarosa.github.io/Mystery-Colors/"
+    "deployment": "https://giovannieliasdarosa.github.io/To-Do-List",
+    "meta": {
+      "role": "Solo",
+      "year": 2024
+    }
   },
   {
-    "tittle": "See more on my GitHub account",
-    "description": "View more projects",
+    "tittle": "Audio-Visualization",
+    "description": "The ultimate audio visualization app that brings your music to life with captivating visuals ",
     "tags": [],
+    "type": "Experiment",
     "image": {
-      "url": "seemygithub.png",
-      "alt": "Cover Image for Card Game on GitHub"
+      "src": "",
+      "alt": ""
     },
-    "link": "https://github.com/GiovanniEliasDaRosa?tab=repositories&from=portfolio"
+    "repository": {
+      "link": "https://github.com/GiovanniEliasDaRosa/Audio-Visualization",
+      "firstCommitDate": "2024-09-27",
+      "lastCommitDate": "2025-01-28",
+      "commits": 4
+    },
+    "deployment": null,
+    "meta": {
+      "role": "Solo",
+      "year": 2024
+    }
+  },
+  {
+    "tittle": "Time-Tracker",
+    "description": "A lightweight Firefox extension that records how much time you spend on websites with a quick popup, an options page for settings and data management, and a dashboard for time by site. Available on the Firefox Add-ons store.",
+    "tags": ["HTML", "CSS", "JS"],
+    "type": "Extension",
+    "image": {
+      "src": "",
+      "alt": ""
+    },
+    "repository": {
+      "link": "https://github.com/GiovanniEliasDaRosa/Time-Tracker",
+      "firstCommitDate": "2025-08-26",
+      "lastCommitDate": "2026-02-03",
+      "commits": 122
+    },
+    "deployment": "https://addons.mozilla.org/en-US/firefox/addon/time-tracker-app/",
+    "meta": {
+      "role": "Solo",
+      "year": 2026
+    }
+  },
+  {
+    "tittle": "Blog Demo",
+    "description": "A small React + Vite blog demo application that enables view posts and edit them. The default posts contents are filler Lorem text, and this project is minimal and demonstrate routing, components, and styling.",
+    "tags": ["React", "HTML", "CSS", "JS"],
+    "type": "Experiment",
+    "image": {
+      "src": "blog-demo.png",
+      "alt": ""
+    },
+    "repository": {
+      "link": "https://github.com/GiovanniEliasDaRosa/blog-demo",
+      "firstCommitDate": "2026-01-31",
+      "lastCommitDate": "2026-02-27",
+      "commits": 24
+    },
+    "deployment": "https://giovannieliasdarosa.github.io/blog-demo",
+    "meta": {
+      "role": "",
+      "year": 2026
+    }
   }
 ]
