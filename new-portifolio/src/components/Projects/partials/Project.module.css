@@ -7,52 +7,141 @@
   grid-template-rows: auto 1fr;
 
   border-radius: 0.5em;
-  overflow: hidden;
   background-color: var(--color-section-projects-project-bg);
 
-  &:hover {
-    background-color: var(--color-section-projects-project-bg-hover);
-  }
-
-  &:is(:active, :focus-visible) {
-    background-color: var(--color-section-projects-project-bg-focus);
-  }
+  box-shadow: 0.25em 0.25em 0.25em -0.125em hsla(0, 0%, 0%, 0.5);
 }
 
 .project_card > img {
+  border-radius: 0.5em 0.5em 0 0;
   aspect-ratio: 2 / 1;
   object-fit: cover;
   background-color: var(--color-section-projects-project-img-bg);
   font-style: italic;
 }
 
-.project_card > span {
+.contents {
   padding: 0.5em;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 1fr auto auto;
   align-content: start;
-  gap: 0.5em;
+  gap: 1.25em;
 }
 
-.project_card_tittle {
+.header {
+  display: grid;
+  gap: 0.5em;
+  align-content: start;
+}
+
+.header_tittle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tittle {
   font-weight: 700;
 }
 
-.project_card_description {
+.type {
+  padding: 0.25em 0.5em;
+  border: solid 0.125rem white;
+  border-radius: 1em;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.description {
   padding-bottom: 0.25em;
 }
 
-.project_card_tags {
+.tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.25em;
 }
 
-.project_card_tags > * {
-  padding: 0.3em 0.75em;
+.tag {
+  padding: 0.25em 0.5em;
   min-width: 5ch;
   line-height: 1;
-  background-color: var(--color-section-projects-project-tag-bg);
+  border: 0.125em solid hsla(0, 0%, 100%, 0.8);
+  background-color: hsla(0, 0%, 100%, 0.125);
   border-radius: 1em;
   text-align: center;
+  display: block;
+}
+
+.repository {
+  display: grid;
+  gap: 0.75em;
+}
+
+.repository_tittle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.repository_tittle_tittle {
+  display: flex;
+  font-weight: 700;
+}
+
+.commits {
+  display: grid;
+  gap: 0.5em;
+  position: relative;
+}
+
+.commits::before {
+  content: "";
+  position: absolute;
+  left: calc(0.5em - 0.125em / 2);
+  top: 0.5em;
+  bottom: 0.5em;
+  width: 0.125em;
+  background-color: hsla(0, 0%, 100%, 0.8);
+}
+
+.commits p {
+  position: relative;
+  padding-left: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.commits p::before {
+  content: "";
+  position: absolute;
+  left: 0.25em;
+  top: calc(50% - 0.25em);
+  background-color: white;
+  width: 0.5em;
+  height: 0.5em;
+
+  border-radius: 0.5em;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(12em, 100%), 1fr));
+  gap: 1em;
+}
+
+.buttons > a {
+  background-color: hsl(208, 62%, 33%);
+  padding: 0.5em;
+  border-radius: 0.5em;
+  display: flex;
+  justify-content: center;
+
+  &:hover {
+    background-color: hsl(208, 58%, 40%);
+  }
+
+  &:is(:active, :focus-visible) {
+    background-color: hsl(208, 41%, 50%);
+  }
 }

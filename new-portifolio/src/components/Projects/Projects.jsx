@@ -1,9 +1,11 @@
 import styles from "./Projects.module.css";
-import projects from "../../data/projects.json";
+import projectsData from "../../data/projects.json";
 import Project from "./partials/Project";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 export default function Projects() {
+  const projects = [...projectsData].reverse();
+
   const projectContainerRef = useRef(null);
   const projectsRefs = useRef([]);
   const [index, setIndex] = useState(0);
