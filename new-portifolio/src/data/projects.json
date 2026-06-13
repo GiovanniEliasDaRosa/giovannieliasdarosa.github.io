@@ -89,8 +89,8 @@
     "tags": ["HTML", "CSS", "JS"],
     "type": "Game",
     "image": {
-      "src": "",
-      "alt": ""
+      "src": "turbo-tracks.png",
+      "alt": "Cover Image for Turbo Tracks on GitHub"
     },
     "repository": {
       "link": "https://github.com/GiovanniEliasDaRosa/Turbo-Tracks",
