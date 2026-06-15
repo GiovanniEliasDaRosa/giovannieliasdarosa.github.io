@@ -168,13 +168,13 @@
     }
   },
   {
-    "tittle": "Time-Tracker",
+    "tittle": "Time Tracker",
     "description": "A lightweight Firefox extension that records how much time you spend on websites with a quick popup, an options page for settings and data management, and a dashboard for time by site. Available on the Firefox Add-ons store.",
     "tags": ["HTML", "CSS", "JS"],
     "type": "Extension",
     "image": {
-      "src": "",
-      "alt": ""
+      "src": "time-tracker.png",
+      "alt": "Cover Image for Time Tracker on GitHub"
     },
     "repository": {
       "link": "https://github.com/GiovanniEliasDaRosa/Time-Tracker",
