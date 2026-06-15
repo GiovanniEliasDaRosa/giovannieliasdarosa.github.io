@@ -147,13 +147,13 @@
     }
   },
   {
-    "tittle": "Audio-Visualization",
+    "tittle": "Audio Visualization",
     "description": "The ultimate audio visualization app that brings your music to life with captivating visuals ",
     "tags": [],
     "type": "Experiment",
     "image": {
-      "src": "",
-      "alt": ""
+      "src": "audio-visualization.png",
+      "alt": "Cover Image for Audio Visualization on GitHub"
     },
     "repository": {
       "link": "https://github.com/GiovanniEliasDaRosa/Audio-Visualization",
