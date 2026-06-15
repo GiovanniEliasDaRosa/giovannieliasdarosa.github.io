@@ -128,3 +128,7 @@
 .icons.circle_half_stroke::before {
   content: "\f042";
 }
+
+.icons.up_right_from_square::before {
+  content: "\f35d";
+}
