@@ -9,12 +9,29 @@ export default function Project({ project, ref }) {
     });
   }
 
+  const imagePath = `/assets/images/cover/resized/${project.image.src}`;
+
+  const splitPath = imagePath.match(/(^\S+)(\.\w+$)/);
+  const fileName = splitPath[1];
+  const fileExtension = splitPath[2];
+
   return (
     <div className={`${styles.project_card} no_default_styles`} ref={ref}>
       <img
-        src={`/assets/images/cover/${project.image.src}`}
+        src={`${fileName}-320${fileExtension}`}
+        srcSet={`
+          ${fileName}-320${fileExtension} 320w,
+          ${fileName}-480${fileExtension} 480w,
+          ${fileName}-640${fileExtension} 640w,
+          ${fileName}-960${fileExtension} 960w,
+          ${fileName}-1280${fileExtension} 1280w
+        `}
+        sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 1280px"
         alt={project.image.alt}
         loading="lazy"
+        style={{
+          background: `url(${fileName}-320${fileExtension})`,
+        }}
       />
 
       <div className={styles.contents}>
