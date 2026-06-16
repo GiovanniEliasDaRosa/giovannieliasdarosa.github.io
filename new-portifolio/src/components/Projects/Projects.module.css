@@ -26,7 +26,12 @@
 .dots {
   display: flex;
   gap: 0.25em;
-  justify-content: center;
+  justify-content: safe center;
+  cursor: pointer;
+  position: relative;
+
+  margin-inline: auto;
+  width: fit-content;
 }
 
 .dots > span {
@@ -35,10 +40,38 @@
   background-color: transparent;
   border: solid 0.1em var(--color-outline-section-projects-dots);
   border-radius: 50%;
+
+  &:hover {
+    background-color: hsl(10, 10%, 90%, 0.2);
+  }
 }
 
-.dots > span[data-selected="true"] {
+.selectedDot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0.5em;
+  height: 0.5em;
   background-color: var(--color-filled-section-projects-dots);
+  background-color: hsl(10, 10%, 90%);
+  border-radius: 0.5em;
+  pointer-events: none;
+}
+
+.selectedDot[data-changing="true"] {
+  animation: 0.5s changingStep cubic-bezier(0.5, 0, 0.5, 1) forwards;
+}
+
+@keyframes changingStep {
+  0% {
+    background-color: hsl(10, 10%, 90%);
+  }
+  50% {
+    background-color: hsl(10, 60%, 80%);
+  }
+  100% {
+    background-color: hsl(10, 10%, 90%);
+  }
 }
 
 .projects_div_scroll[data-scroll="left"] {

@@ -14,6 +14,12 @@ export default function Projects() {
   const scrollTimeoutRef = useRef(null);
   const skipSeekRef = useRef(null);
 
+  const selectedDotsRef = useRef(null);
+  const indexRef = useRef([]);
+  const dotsRefs = useRef([]);
+  const lastDotRef = useRef(null);
+  const dotsVisualUpdateTimeoutRef = useRef(null);
+
   const [mobile, setMobile] = useState(false);
 
   // Mark: Carousel
@@ -61,9 +67,9 @@ export default function Projects() {
       }
 
       if (betterLeft.value < betterRight.value) {
-        setIndex(betterRight.index);
+        updateStepVisual(betterRight.index);
       } else {
-        setIndex(betterLeft.index);
+        updateStepVisual(betterLeft.index);
       }
     }
 
@@ -71,9 +77,9 @@ export default function Projects() {
       setScrolled("none");
 
       if (current == 0) {
-        setIndex(0);
+        updateStepVisual(0);
       } else if (current == scrollMax) {
-        setIndex(projectsRefs.current.length - 1);
+        updateStepVisual(projectsRefs.current.length - 1);
       }
 
       seekSelected();
@@ -85,14 +91,14 @@ export default function Projects() {
 
       if (skipSeekRef.current) return;
 
-      setIndex(0);
+      updateStepVisual(0);
       return;
     } else if (current == scrollMax) {
       setScrolled("right");
 
       if (skipSeekRef.current) return;
 
-      setIndex(projectsRefs.current.length - 1);
+      updateStepVisual(projectsRefs.current.length - 1);
       return;
     } else {
       setScrolled("middle");
@@ -119,9 +125,75 @@ export default function Projects() {
     updateMask();
   }, [scrollTimeoutRef, updateMask]);
 
+  const updateStepVisual = useCallback(
+    (step) => {
+      const fontSize = parseFloat(window.getComputedStyle(document.documentElement).fontSize);
+      let lastIndex = null;
+
+      clearTimeout(dotsVisualUpdateTimeoutRef.current);
+
+      // If has spammed button
+      if (lastDotRef.current == null) {
+        lastIndex = indexRef.current;
+        lastDotRef.current = lastIndex;
+      } else {
+        lastIndex = lastDotRef.current;
+      }
+
+      setIndex(step);
+
+      const lastBounding = dotsRefs[lastIndex];
+      const thisBounding = dotsRefs[step];
+
+      let left = lastBounding.offsetLeft;
+
+      if (lastBounding.offsetLeft > thisBounding.offsetLeft) {
+        left = thisBounding.offsetLeft;
+      }
+
+      const spaces = Math.abs(lastIndex - step);
+
+      const fullSize = (spaces * 0.75 + 0.5) * fontSize;
+
+      selectedDotsRef.current.style.transition = "none";
+
+      selectedDotsRef.current.style.left = `${left}px`;
+      selectedDotsRef.current.style.width = `${fullSize}px`;
+      selectedDotsRef.current.setAttribute("data-changing", "false");
+
+      setTimeout(() => {
+        selectedDotsRef.current.style.transition = `
+          left  0.4s 0.25s cubic-bezier(0.2, 0.6, 0.4, 1),
+          width 0.4s 0.25s cubic-bezier(0.2, 0.6, 0.4, 1)`;
+        selectedDotsRef.current.style.width = `0.5em`;
+        selectedDotsRef.current.style.left = `${thisBounding.offsetLeft}px`;
+        selectedDotsRef.current.setAttribute("data-changing", "true");
+      });
+
+      dotsVisualUpdateTimeoutRef.current = setTimeout(() => {
+        selectedDotsRef.current.style.transition = "none";
+        lastDotRef.current = null;
+      }, 400);
+    },
+    [setIndex],
+  );
+
+  function clickStep(step) {
+    // Same position, ignore
+    if (index == step) return;
+
+    updateStepVisual(step);
+
+    projectsRefs.current[step]?.scrollIntoView({
+      behavior: "smooth",
+      inline: "center",
+    });
+    skipSeekRef.current = true;
+  }
+
   function previous() {
     const previous = Math.max(index - 1, 0);
-    setIndex(previous);
+    updateStepVisual(previous);
 
     projectsRefs.current[previous]?.scrollIntoView({
       behavior: "smooth",
@@ -132,7 +204,7 @@ export default function Projects() {
 
   function next() {
     const next = Math.min(index + 1, projects.length - 1);
-    setIndex(next);
+    updateStepVisual(next);
 
     projectsRefs.current[next]?.scrollIntoView({
       behavior: "smooth",
@@ -157,6 +229,10 @@ export default function Projects() {
       updateMask();
     }
   }, [updateMask]);
+
+  useEffect(() => {
+    indexRef.current = index;
+  }, [index]);
 
   useEffect(() => {
     // Mark: Mobile
@@ -209,8 +285,11 @@ export default function Projects() {
         </div>
 
         <div className={styles.dots}>
+          <div className={styles.selectedDot} ref={selectedDotsRef}></div>
           {projects.map((project, i) => {
-            return <span key={i} data-selected={i == index ? "true" : null}></span>;
+            return (
+              <span key={i} onClick={() => clickStep(i)} ref={(el) => (dotsRefs[i] = el)}></span>
+            );
           })}
         </div>
 
