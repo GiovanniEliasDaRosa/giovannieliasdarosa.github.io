@@ -37,20 +37,31 @@
   --color-bg-filled-button-focus: hsl(207, 77%, 23%);
 
   --color-bg-section-projects: hsl(208, 90%, 8%);
+
   --color-outline-section-projects-dots: hsla(0, 0%, 100%, 0.6);
   --color-filled-section-projects-dots: hsla(0, 0%, 100%, 1);
-
-  --color-section-skills-outline: hsla(209, 30%, 70%, 0.2);
+  --color-fill-section-projects-dots-hover: hsl(208, 88%, 13%);
+  --color-fill-section-projects-dots-selected: hsl(10, 10%, 90%);
+  --color-fill-section-projects-dots-selected-changing: hsl(10, 60%, 80%);
 
   --color-section-projects-button-bg: hsl(209, 69%, 32%);
   --color-section-projects-button-bg-hover: hsl(209, 69%, 32%);
   --color-section-projects-button-bg-focus: hsl(209, 85%, 13%);
 
   --color-section-projects-project-bg: hsl(208, 88%, 13%);
-  --color-section-projects-project-bg-hover: hsl(208, 80%, 18%);
-  --color-section-projects-project-bg-focus: hsl(208, 76%, 22%);
+  --color-section-projects-project-shadow: hsla(203, 59%, 62%, 0.25);
   --color-section-projects-project-img-bg: hsl(208, 74%, 28%);
-  --color-section-projects-project-tag-bg: hsl(207, 65%, 26%);
+  --color-section-projects-project-type-outline: hsl(208, 59%, 31%);
+  --color-section-projects-project-tag-bg: hsla(0, 0%, 100%, 0.8);
+  --color-section-projects-project-tag-outline: hsla(0, 0%, 100%, 0.125);
+  --color-section-projects-project-commits-line: hsla(0, 0%, 100%, 0.75);
+  --color-section-projects-project-commits-dots: hsl(0, 0%, 100%);
+
+  --color-section-projects-project-links: hsl(208, 62%, 33%);
+  --color-section-projects-project-links-hover: hsl(208, 58%, 40%);
+  --color-section-projects-project-links-focus: hsl(208, 41%, 50%);
+
+  --color-section-skills-outline: hsla(209, 30%, 70%, 0.2);
 
   --color-footer-bg: hsl(207, 82%, 15%);
 }
@@ -88,18 +99,28 @@
   --color-bg-section-projects: hsl(204, 53%, 93%);
   --color-outline-section-projects-dots: hsla(0, 0%, 10%, 0.6);
   --color-filled-section-projects-dots: hsla(0, 0%, 10%, 1);
-
-  --color-section-skills-outline: hsla(208, 70%, 30%, 0.2);
+  --color-fill-section-projects-dots-hover: hsl(207, 63%, 83%);
+  --color-fill-section-projects-dots-selected: hsl(12, 62%, 35%);
+  --color-fill-section-projects-dots-selected-changing: hsl(11, 58%, 68%);
 
   --color-section-projects-button-bg: hsl(209, 64%, 34%);
   --color-section-projects-button-bg-hover: hsl(209, 51%, 44%);
   --color-section-projects-button-bg-focus: hsl(209, 81%, 20%);
 
   --color-section-projects-project-bg: hsl(210, 50%, 87%);
-  --color-section-projects-project-bg-hover: hsl(209, 51%, 76%);
-  --color-section-projects-project-bg-focus: hsl(209, 45%, 66%);
+  --color-section-projects-project-shadow: hsla(204, 76%, 19%, 0.25);
   --color-section-projects-project-img-bg: hsl(208, 37%, 51%);
-  --color-section-projects-project-tag-bg: hsl(208, 58%, 69%);
+  --color-section-projects-project-type-outline: hsl(208, 50%, 70%);
+  --color-section-projects-project-tag-bg: hsla(204, 80%, 14%, 0.75);
+  --color-section-projects-project-tag-outline: hsla(204, 65%, 22%, 0.063);
+  --color-section-projects-project-commits-line: hsla(208, 10%, 10%, 0.75);
+  --color-section-projects-project-commits-dots: hsl(208, 10%, 10%);
+
+  --color-section-projects-project-links: hsl(208, 46%, 78%);
+  --color-section-projects-project-links-hover: hsl(207, 42%, 61%);
+  --color-section-projects-project-links-focus: hsl(208, 43%, 46%);
+
+  --color-section-skills-outline: hsla(208, 70%, 30%, 0.2);
 
   --color-footer-bg: hsl(205, 71%, 93%);
 }

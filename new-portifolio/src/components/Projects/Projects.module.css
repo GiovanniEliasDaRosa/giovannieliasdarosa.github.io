@@ -42,7 +42,7 @@
   border-radius: 50%;
 
   &:hover {
-    background-color: hsl(10, 10%, 90%, 0.2);
+    background-color: var(--color-fill-section-projects-dots-hover);
   }
 }
 
@@ -52,8 +52,7 @@
   top: 0;
   width: 0.5em;
   height: 0.5em;
-  background-color: var(--color-filled-section-projects-dots);
-  background-color: hsl(10, 10%, 90%);
+  background-color: var(--color-fill-section-projects-dots-selected);
   border-radius: 0.5em;
   pointer-events: none;
 }
@@ -64,13 +63,13 @@
 
 @keyframes changingStep {
   0% {
-    background-color: hsl(10, 10%, 90%);
+    background-color: var(--color-fill-section-projects-dots-selected);
   }
   50% {
-    background-color: hsl(10, 60%, 80%);
+    background-color: var(--color-fill-section-projects-dots-selected-changing);
   }
   100% {
-    background-color: hsl(10, 10%, 90%);
+    background-color: var(--color-fill-section-projects-dots-selected);
   }
 }
 
