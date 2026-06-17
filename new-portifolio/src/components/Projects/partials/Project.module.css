@@ -2,6 +2,7 @@
   flex: 0 0 clamp(min(40ch, calc(100% - 1em)), 10ch + 1vw, 100vw);
 
   scroll-snap-align: center;
+  scroll-snap-stop: always;
 
   display: grid;
   grid-template-rows: auto 1fr;
