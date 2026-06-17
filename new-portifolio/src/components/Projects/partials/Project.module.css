@@ -20,6 +20,7 @@
   font-style: italic;
   width: 100%;
   text-shadow: 0.125em 0.125em 0 var(--color-text-inverse);
+  color: transparent;
 
   background-size: cover !important;
   background-repeat: no-repeat !important;
