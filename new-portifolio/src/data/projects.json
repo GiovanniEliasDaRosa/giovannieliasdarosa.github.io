@@ -9,7 +9,7 @@
       "alt": "Cover Image for Trap The Cat on GitHub"
     },
     "repository": {
-      "link": "https://github.com/GiovanniEliasDaRosa/Image-Puzzle",
+      "link": "https://github.com/GiovanniEliasDaRosa/Trap-The-Cat",
       "firstCommitDate": "2023-07-05",
       "lastCommitDate": "2023-08-24",
       "commits": 16
@@ -22,7 +22,7 @@
   },
   {
     "tittle": "MineSweeper",
-    "description": "This is a recriation of the classic Minesweeper game",
+    "description": "This is a recriation of the classic Minesweeper game. With 4 color themes, 3 languages(Portuguese, English, French).",
     "tags": ["HTML", "CSS", "JS"],
     "type": "Game",
     "image": {
@@ -43,7 +43,7 @@
   },
   {
     "tittle": "Em busca da Lily",
-    "description": "Find where Brad's Sister Lily was kidnapped",
+    "description": "A game where you have to fight your way to find where Lily(Brad's Sister) was kidnapped.",
     "tags": ["HTML", "CSS", "JS"],
     "type": "Game",
     "image": {
@@ -64,7 +64,7 @@
   },
   {
     "tittle": "Image Puzzle",
-    "description": "Solve a 3x3 map by arranging the image tiles in the correct order",
+    "description": "Solve a 3x3 map by arranging the image tiles in the correct order. You can either visually organize the image or use the numbers provided to guide you.",
     "tags": ["HTML", "CSS", "JS"],
     "type": "Game",
     "image": {
@@ -85,7 +85,7 @@
   },
   {
     "tittle": "Turbo Tracks",
-    "description": "Take control of a speedy car as it navigates three lanes filled with obstacles. Dodge it and test your reflexes in this adrenaline-fueled race to your highest score!",
+    "description": "Take control of a speedy car as it navigates three lanes filled with obstacles. Dodge it and test your reflexes in this adrenaline-fueled race to your highest score.",
     "tags": ["HTML", "CSS", "JS"],
     "type": "Game",
     "image": {
@@ -106,7 +106,7 @@
   },
   {
     "tittle": "Card Game",
-    "description": "A classic card game implemented using XAMPP and the Ratchet library",
+    "description": "A classic card game implemented using XAMPP and the Ratchet library.",
     "tags": ["WebSocket", "PHP", "HTML", "CSS", "JS"],
     "type": "Game",
     "image": {
@@ -127,7 +127,7 @@
   },
   {
     "tittle": "To Do List",
-    "description": "A powerful tool that helps you organize your tasks",
+    "description": "A simple yet powerful tool helps you organize your tasks, stay productive, and manage your time effectively. Whether you're a student, professional, or just someone who wants to keep track of their daily tasks, this app has got you covered.",
     "tags": ["HTML", "CSS", "JS"],
     "type": "Real Project",
     "image": {
@@ -135,7 +135,7 @@
       "alt": "Cover Image for To Do List on GitHub"
     },
     "repository": {
-      "link": "https://giovannieliasdarosa.github.io/To-Do-List",
+      "link": "https://github.com/GiovanniEliasDaRosa/To-Do-List",
       "firstCommitDate": "2024-04-12",
       "lastCommitDate": "2024-12-04",
       "commits": 26
@@ -148,8 +148,8 @@
   },
   {
     "tittle": "Audio Visualization",
-    "description": "The ultimate audio visualization app that brings your music to life with captivating visuals ",
-    "tags": [],
+    "description": "The ultimate audio visualization app that brings your music to life with captivating visuals, analyzing the audio's frequency and amplitude to generate bars that represent the volume of each Hertz channel, with color-coded bars to indicate the volume level of each channel.",
+    "tags": ["HTML", "CSS", "JS"],
     "type": "Experiment",
     "image": {
       "src": "audio-visualization.png",
@@ -170,7 +170,7 @@
   {
     "tittle": "Time Tracker",
     "description": "A lightweight Firefox extension that records how much time you spend on websites with a quick popup, an options page for settings and data management, and a dashboard for time by site. Available on the Firefox Add-ons store.",
-    "tags": ["HTML", "CSS", "JS"],
+    "tags": ["HTML", "CSS", "JS", "WebExtensions API"],
     "type": "Extension",
     "image": {
       "src": "time-tracker.png",
