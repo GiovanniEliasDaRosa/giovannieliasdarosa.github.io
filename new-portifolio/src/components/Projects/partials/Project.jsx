@@ -55,7 +55,7 @@ export default function Project({ project, ref }) {
         <div className={styles.repository}>
           <div className={styles.repository_tittle}>
             <p className={`icons github brands ${styles.repository_tittle_tittle}`}>Repository</p>
-            <p>16 commits</p>
+            <p>{project.repository.commits} commits</p>
           </div>
 
           <div className={styles.commits}>
