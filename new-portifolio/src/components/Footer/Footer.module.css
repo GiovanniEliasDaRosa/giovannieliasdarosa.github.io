@@ -7,12 +7,32 @@
 .footer > p {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 0.5ch;
   text-align: center;
 }
 
 .footer .react {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .react::before {
+  font-size: 2rem;
+}
+
+.footer:hover .react::before {
+  animation: 2s spin cubic-bezier(0.8, 0.6, 0.4, 0.6) infinite;
+}
+
+@keyframes spin {
+  0% {
+    rotate: 0turn;
+  }
+  100% {
+    rotate: 1turn;
+  }
 }
 
 .footer .react::before {
