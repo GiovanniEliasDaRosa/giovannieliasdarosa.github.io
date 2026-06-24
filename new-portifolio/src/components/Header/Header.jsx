@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./Header.module.css";
 import ThemeButton from "./partials/ThemeButton";
 
@@ -70,7 +70,7 @@ export default function Header() {
     toggleMenu(true);
   }
 
-  useState(() => {
+  useEffect(() => {
     let timeoutUpdateHeader = null;
 
     function updateHeader() {
@@ -155,7 +155,13 @@ export default function Header() {
         </nav>
       </header>
 
-      <dialog ref={dialogRef} className={styles.header_dialog}>
+      <dialog
+        ref={dialogRef}
+        className={styles.header_dialog}
+        onClose={() => {
+          setMenuOpen(false);
+        }}
+      >
         <div className={`${styles.header_links} ${styles.header_mobile}`}>
           <button
             className={`square icons nomargin xmark ${styles.close_button}`}
