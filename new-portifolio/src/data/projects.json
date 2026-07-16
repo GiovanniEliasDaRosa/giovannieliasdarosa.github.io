@@ -208,5 +208,25 @@
       "role": "",
       "year": 2026
     }
+  },
+  {
+    "tittle": "Quick Task",
+    "description": "A full-stack task management application that allows users to create accounts, manage multiple lists, and add items on each list. Users can mark items as completed or incomplete, as well of editing and deleting both lists and tasks.",
+    "tags": ["React", "HTML", "CSS", "JS", "Java", "Spring Boot", "MySQL"],
+    "type": "Real Project",
+    "image": {
+      "src": "quick-task.png",
+      "alt": "Cover Image for Quick Task on GitHub"
+    },
+    "repository": {
+      "link": "https://github.com/TiagoCitranguloDaSilva/quick-task",
+      "firstCommitDate": "2026-02-24",
+      "lastCommitDate": "2026-07-15",
+      "commits": 118
+    },
+    "meta": {
+      "role": "",
+      "year": 2026
+    }
   }
 ]
