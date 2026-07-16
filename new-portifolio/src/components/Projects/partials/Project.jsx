@@ -68,6 +68,27 @@ export default function Project({ project, ref }) {
           </div>
         </div>
 
+        {project.collaborations ? (
+          <div className={styles.collaborations}>
+            <p className={`icons people_group ${styles.collaborations_tittle}`}>Collaborations</p>
+
+            <div className={styles.collaborations_persons}>
+              {project.collaborations.map((item) => (
+                <div className={styles.collaborations_person}>
+                  <p className={styles.collaborations_person_name}>{item.collaborator}</p>
+                  <p className={styles.collaborations_person_role}>{item.role}</p>
+                  <a
+                    href={item.link}
+                    className={`no_default_styles button icons github brands ${styles.collaborations_link}`}
+                  >
+                    Go to GitHub
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : null}
+
         <div className={styles.buttons}>
           <a
             href={project.repository.link + "?utm_medium=profile&utm_campaign=portfolio"}

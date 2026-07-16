@@ -224,6 +224,18 @@
       "lastCommitDate": "2026-07-15",
       "commits": 118
     },
+    "collaborations": [
+      {
+        "collaborator": "Giovanni",
+        "role": "Front End",
+        "link": "https://github.com/GiovanniEliasDaRosa"
+      },
+      {
+        "collaborator": "Tiago",
+        "role": "Back End",
+        "link": "https://github.com/TiagoCitranguloDaSilva"
+      }
+    ],
     "meta": {
       "role": "",
       "year": 2026

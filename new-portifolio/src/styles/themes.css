@@ -56,6 +56,7 @@
   --color-section-projects-project-tag-outline: hsla(0, 0%, 100%, 0.125);
   --color-section-projects-project-commits-line: hsla(0, 0%, 100%, 0.75);
   --color-section-projects-project-commits-dots: hsl(0, 0%, 100%);
+  --color-section-projects-project-collabs-outline: hsl(208, 62%, 25%);
 
   --color-section-projects-project-links: hsl(208, 62%, 33%);
   --color-section-projects-project-links-hover: hsl(208, 58%, 40%);
@@ -115,6 +116,7 @@
   --color-section-projects-project-tag-outline: hsla(204, 65%, 22%, 0.063);
   --color-section-projects-project-commits-line: hsla(208, 10%, 10%, 0.75);
   --color-section-projects-project-commits-dots: hsl(208, 10%, 10%);
+  --color-section-projects-project-collabs-outline: hsl(208, 52%, 82%);
 
   --color-section-projects-project-links: hsl(208, 46%, 78%);
   --color-section-projects-project-links-hover: hsl(207, 42%, 61%);

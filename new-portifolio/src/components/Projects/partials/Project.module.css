@@ -152,3 +152,66 @@
     background-color: var(--color-section-projects-project-links-focus);
   }
 }
+
+.collaborations {
+  display: grid;
+  gap: 0.75em;
+}
+
+.collaborations_tittle {
+  display: flex;
+  font-weight: 700;
+}
+
+.collaborations_persons {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.5em;
+}
+
+.collaborations_person {
+  display: grid;
+  grid-template-columns: subgrid;
+  align-items: center;
+  gap: 0.5em;
+  grid-column: span 3;
+}
+
+.collaborations_person:not(:last-child) {
+  padding-bottom: 0.5em;
+  border-bottom: solid 0.125em var(--color-section-projects-project-collabs-outline);
+}
+
+.collaborations_person_name {
+  font-weight: 600;
+}
+
+.collaborations_link {
+  color: var(--color-text);
+  display: flex;
+  padding: 0.25em 0.5em;
+}
+
+@media (width < 30em) {
+  .collaborations_persons {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .collaborations_person {
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+    grid-column: span 2;
+    grid-row: span 3;
+  }
+
+  .collaborations_person_name {
+    text-align: right;
+  }
+
+  .collaborations_link {
+    justify-self: center;
+    justify-content: center;
+    grid-column: span 2;
+  }
+}

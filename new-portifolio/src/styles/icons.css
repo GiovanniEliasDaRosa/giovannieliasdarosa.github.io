@@ -132,3 +132,7 @@
 .icons.up_right_from_square::before {
   content: "\f35d";
 }
+
+.icons.people_group::before {
+  content: "\e533";
+}
